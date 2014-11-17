@@ -1,0 +1,30 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+((".emacs"
+ ((filename . "d:/emacs-24.3-bin-i386/.emacs")
+  (front-context-string . ";; appt 起作用了, 研究")
+  (rear-context-string . "y-duration 10)\n\n")
+  (position . 4308)))
+("F6"
+ ((filename . "/home/laub/tex/f6.tex")
+  (front-context-string . "\\documentclass[a")
+  (rear-context-string)
+  (position . 1)))
+("Joy 2005年，我的云南和西藏"
+ ((filename . "~/hike/hike.tex")
+  (front-context-string . "The square root ")
+  (rear-context-string . "begin{document}\n")
+  (position . 42)))
+("Todo"
+ ((filename . "/home/laub/emacs/todo/do")
+  (front-context-string . "*/* 2006-02-08 2")
+  (rear-context-string)
+  (position . 1594)))
+("胶片使用记录"
+ ((filename . "/home/laub/tex/film.tex")
+  (front-context-string . "%     \\begin{tab")
+  (rear-context-string . " \\end{tabular}\n\n")
+  (position . 2165)))
+)

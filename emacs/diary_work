@@ -1,0 +1,489 @@
+
+
+Nov 5, 2006 
+  
+  1. http认证报文的包头结构, 还没查到, 需要更多上网时间.  问林强的同事.  
+  
+  2. telnet, ftp, ssh应答程序的登陆界面, 可查询, 有帮助. 
+  
+  
+
+
+Nov 6, 2006 
+  
+  服务器双机热备, 数据上磁带, 没有需求.  
+  
+  ftpd.c的main函数，已经基本理解。
+  
+  1. xdata类的函数要整理, 哪个字段什么东西，清单要拿出来,  修改意见, 找小叶.  
+  
+  2. 新的通行证代码替换上去， 要在今明两天搞定。  
+  
+  3. ftp, telnet, telnetd, ssh的菜单改造
+  
+  项目组未完成的
+  1.rdp客户端
+  
+  2.冻结或者终止正在访问的连接
+Nov 7, 2006 
+  
+  1. 指定ettn:
+	ln -s /home/laub/../(那个真的)ettn    /usr/bin/ettn
+  
+  2. 配置xinetd的telnet服务, 把server<=/home/laub/../ettnd  
+    
+  3. 创建用户:
+  	创建 # useradd rstel
+  	然后修改/etc/passwd,  把该用户的权限(第一个数字)改成0, 把登陆程序改为/bin/ettn 
+  
+  4. 库
+	# su - rstel, 系统报找不到什么.so.0, 就把着库往/usr/lib/里做ln -s 符号连接.
+	
+  5. 外部终端telnet服务器,  如果外部ping得通服务器, 却telnet不到服务器, 那么请把防火墙关了 
+	  # service iptables stop
+  
+  经过以上努力, 我对telnet转接服务的修改, 已经可以在外部telnet终端上体现出来了.
+  2006年11月07日 星期二 04时39分15秒
+  
+  问题: printf的第一个字符有时会上消失， 如果是中文信息，则在终端出现乱码. 
+	Passport No.:3
+	Password:3
+	(时而中文乱码)
+  
+  同样的程序:
+	Passport No.:2
+	Password:2
+	(时而中文不乱)
+  难以控制
+  在程序中, 把printf语句中输出的中文前面多加两个空格.  是个问题.
+  
+  
+  菜单, 前十项, 有序号, 用户通过输入序号实现选择, 如果有更多, 则通过less进行查找, 完全手动
+  录入.
+  
+  程序中的实体， 到服务器.2去看。
+
+
+Nov 8, 2006 
+  
+  1. 新通行证的telnet, ssh改造
+  2. telnet, ssh菜单改造
+  3. xdata的清理
+  
+  _xdata_insert_函数中, 第二个参数, 有的出现在agent.h, 有的出现在user.h, user.h已经废弃了.
+  
+  如果安全服务器返回的资源为空, 那么拒绝联接
+   
+  ettn, etssh可以合成一个程序.
+  
+  et-agent.h 小叶给的
+  et-dpp.h   小张给的
+  
+  base_xdata_insert_str
+  base_xdata_insert_int32
+  base_xdata_insert_double
+  base_xdata_insert_
+  base_xdata_insert_
+  base_xdata_insert_
+  根据要插入的数据的类型来选择 xdata 的函数. 
+
+
+Nov 9, 2006 
+  
+  新疆,宁波,厦门,北京,
+	
+  集成开发环境
+  
+  第一屏：emacs
+	  
+  第二屏：telnet        192.168.200.2    测试环境, 运行程序
+	
+  第三屏：ssh    root @ 192.168.200.2    ssh到访问服务器, cd /usr/bin
+  
+	  ftp		192.168.200.80   从访问服务器ftp到本地的
+                                         "~/job/ye/bin/", 随时取得
+                                         新编译的ettn.
+  菜单实例，screCRT到pack@192.168.200.1
+	./src/.../t.c
+        tetdpp -t ky  <Enter>
+  t.c代码见书签	
+  
+  1. “UAAP Passwd”的冒号没有出来， 小张。 
+  2。 help和less功能还没有
+  3。 xdata类函数是否全部正确，还需要后台的联合调试。
+  
+  将telnet目录，更换到/job/src中telnet应该在的地方。
+
+Nov 10, 2006 
+  
+   less有效了， 还有对less目标的选择.
+   
+   help文件更好实现
+   
+
+Nov 11, 2006 
+  
+  LinuxA4, 安装et-acc.x.x.x.i386.rpm
+  Windows, 安装xxx.exe
+  Sco,     作为安全服务器
+  没有搞定
+  
+  telnet最新版合整, ssh函数,菜单改造, ftp函数改造.	
+Nov 12, 2006 
+  
+  资源列表中的最后一个主机访问不了
+  ssh.c编译通不过
+  给叶的数据, 新增, root@xx.x.xx的"root", 提出来, telnet正在改, ssh.c还没动
+  
+  ftpd.c张改, 字段我加
+  
+    
+
+  telnet  main.c  1.源IP
+  ssh.c 处于
+  
+
+Nov 13, 2006 
+  
+  安装安全服务器和把我的开发Linux虚拟机作为访问服务器, 另外把我的综合控制平台设置为这个范
+  围的控制台.  制卡发卡的过程, 很过瘾.  
+
+Nov 14, 2006 
+  
+  去中关村提货, 3个保险柜, 10箱网线, 2个针式打印机, 一个扫描仪，10盒水晶头，1000张DVD光盘，
+  DVD刻录机。
+  
+  下午装机, IBM的PC服务器，导轨是made in china。
+  
+10
+
+Nov 15, 2006 
+  
+  撰写控制台操作手册。昨天完成了telnet和ssh, 现在做ftp的。
+
+Nov 16, 2006 
+  
+  #etadmin -e all			#导出所有的节点
+  #etreg				#激活中心节点
+  #etctrl start >/dev/null 2>&1		#启动服务
+  
+  
+  下载综合控制台的节点文件10000000x.pak
+  注意bin目录中的simucard.dll是SCO版，还是AIX版的。
+  下载$FILE_DIR中的虚拟IC卡文件simu-card.[卡号]到 综合控制台安装目录的file目录下。
+  
+  
+  激活Win程序， 启动所有服务。
+  
+  时隐时现的ettn的core dump.
+  
+
+  
+
+Nov 18, 2006 
+  
+  上午去方庄的招商银行, 中午到下午开锁. 
+  
+  改造操作手册和功能说明.  
+
+Nov 19, 2006 
+  
+  启动infomix, oninit -v
+  关闭, onmode -ky
+  状态, onstat -
+  
+
+Nov 23, 2006 
+  
+  导数据,会导致coredump,		
+  handle = etdpp_session_open(no, clientip); /* open session */
+  
+  上次coredump
+  是rule_deal(); 语句
+  
+  是libflset.so.0太老了,造成的. 
+  
+  另外, 把ettn中的资源列表文件的名字, lessFile 改为resFile.
+Nov 24, 2006 
+  
+  cvs下来的main.c比较怪异.
+  firefox可以访问公司os, 速度很快, ie不行, 无法贴工作报告
+  
+  怀疑kerberos认证, 导致连接很慢.  
+
+
+Nov 27, 2006 
+  
+  让ssh能手工输入ip.
+
+Nov 28, 2006 
+  
+  Sco, Aix中的安装包,是怎么做的?
+Nov 29, 2006 
+  
+  把telnetd.c中函数中的setenv用到etxwin中
+  
+  telnetd目录中的sys_term.c中的"ECHO"附近的代码用到etxwin中, 控制终端行为.
+  
+  拷贝了, 中断还是那样.
+  
+  把ettn中的get_remote_ip考贝过来, 如果get_peer_ip没有得到远程ip, then use 
+  get_remote_ip
+
+Nov 30, 2006 
+  
+  每改一个程序, 要先备份.
+
+Dec 1, 2006 
+  
+  代码折叠功能.
+
+Dec 2, 2006 
+  
+  
+
+Dec 4, 2006 
+  
+  ftp login失败, 报这个
+	  
+	278     [Warning] : (Mon Dec  4 01:47:16 2006) -- (Mon Dec  4 01:47:16 2006)
+	file [session.c] line [266]
+	can't load etdppccbbdc:etdpp_update_ccbbdc
+  
+ 
+  session_openres, 在选择目标住机后,和转接前, 传接结束后就session_closeres.
+  ettn, etssh, etftpd都要.
+  
+  时间同步:ntpdate hostip
+  
+  
+  main.c提交不成功, 
+
+
+
+Dec 7, 2006 
+  
+  x - ftp只有一条记录时, 直接登陆了,并且先显示一个Login failed.
+  
+  x - loop.c中的扩号乱了.
+  
+  telnet, ssh, 临时文件改名字.
+
+  
+  服务端的空转. 
+  
+  
+
+Dec 8, 2006 
+  
+  更改Sco的inetd服务:  
+  vi 	/etc/services, 编辑相关的端口号
+  vi	/etc/inetd.conf 
+  ps -ef|grep inetd,   找出inetd的进程号n
+  kill -1 n,		杀掉inetd并且重新启动之
+  
+  更改生效!
+  
+  x. etftpd, 如果客户试图访问一个不存在的主机, 当然在输入密码后, 客户就会阻塞, 于是客户Ctrl+d,
+  终止登陆, ftp客户软件说, 10秒钟后放开, 10秒钟后, ftp客户端命令行出现了, 同时etftpd空转,
+  带着etlog, 耗CPU达到100%.
+   
+  不存在的主机有两种情况, 1.资源列表中的主机是假的, 无效的; x. 2. 用户输入错了.  从服务端, 
+  客户端分别考虑. 
+  
+  x. 用户输入ip, 访问被拒绝了.  如果用户输入,不在list中, 大循环
+
+Dec 9, 2006 
+  
+  x. 用户输入是否合法资源,不要用strstr, 要把list的每个资源全字段与UserInputStr 做strncmp!
+  
+  --------------------------------------------------------------------------------------
+  loop.c 以下代码:
+  
+    /* get user's password to remote server */
+    p = get_password(g_id, ip, user);
+    while (p == NULL) {
+        /* lreply(fdout, 500, "Failed to get passwd of %s@%s", user, ip); */
+        if (singleRes) {
+	    reply(fdout, 202, " Please type 'user %s' to connect %s", user, ip);
+	} else {
+	    reply(fdout, 500, " Please type 'user %s' to connect %s", user, ip);
+        }
+	
+        /* ftp client "Login failed." , and i want to get rid of it. */
+        
+    RECV2:
+  
+   while循环的结束扩号让我迷惑. 
+  --------------------------------------------------------------------------------------   
+   ettn输入1 2 回车, 访问了1之后, 退出, 回自动登录2. 
+  --------------------------------------------------------------------------------------   
+   login时, 登陆用户抢在ettn之前, 把资源列表外的用户和密码输入了, 于是能够以别的用户
+   登录
+   
+   telnet.c
+   主循环 	1626	int Scheduler(int block) /* should we block in the select ? */
+   
+   在telnet.c analyse()中, 读到用户的登陆信息和接收到目标主机的返回前, 
+   在sys_bsd.c, process_rings()中要把用户的输入挡住. process_rings(),
+   893, 看看发送到主机的数据是不是只有用户键盘输入的.
+  --------------------------------------------------------------------------------------
+   ssh  列表长时, 在vim中屏幕只有半屏, 退出后, 主界面也只有半屏
+   	先输入root, 再输入11.159.12.68, 再输入正确的root@11.159.12.68, 
+	抱connect refused.
+   ettn	也有类似问题
+  --------------------------------------------------------------------------------------
+
+Dec 10, 2006 
+  
+  makewhatis, 在运行时, 消耗了很多CPU资源, 这个进程是干什么的?
+
+Dec 11, 2006 
+  
+  准备去广西签合同.  
+
+Dec 13, 2006 
+  
+  广西行, 黄志宏, 合同的电子版. 
+
+Dec 14, 2006 
+   
+   rdp编译不了, Makefile.am中找不到xx
+   loop.c提交不上去,版本号比上面还小.
+
+Dec 15, 2006 
+  
+  cvs up之前, 先备份本地文件. 
+  sscanf之前, 先清空变量.   
+   
+  xdata类的浮动coredump, 又出现了.
+
+Dec 20, 2006 
+   
+  项目验收
+
+Dec 25, 2006 
+   
+  住处电话 010-67580413
+
+Dec 27, 2006 
+  
+  已Linux作为访问服务器的一切实现方式, 如何移植到以Sco作为访问服务器.
+  
+  在Windows中设置环境变量, SZDFHX_DEBUG=1, 综合控制台中的不在线对象都
+  会全部变绿.  
+  
+  文档最好用生产机的数据,来截图. 用下面的方法把生产机的数据备份到本地.
+  etdb 1, 把两个数据库导出到两个文件, etdb 2 
+  
+  开发环境 010-67593713
+
+
+Dec 28, 2006 
+  
+  综合控制台的etagent进程, 频繁掉, Windows报etagent.exe访问0x000000, 
+  该内存区不可读
+
+  
+  统计分析分两种情况: 配置出来的直方图, 饼图等; 下拉菜单的报表, 可以导
+  出为html, 等形式.
+
+Dec 30, 2006 
+   
+  戴永强, 高伟达, SVF.  
+
+Jan 12, 2007 
+  
+  三台PC Server, 
+
+Jan 18, 2007 
+  
+  RSA认证, 版本差异. 上线环境中, 是6.1; 程序是5.2版本, 函数名都不一样.  
+
+Jan 21, 2007 
+  
+  var/opt/K, 公司软件安装目录
+  var/spool, 监控日志安装目录
+
+Jan 23, 2007 
+  
+  增加机构: 10-02, 322002700, 营运管理部
+  增加操作员: 0101, 倪小东
+  
+  10:10, 输入登陆用户名, 60秒后才有响应,"Access denied.", 重启安全服务
+  器无变化, 重启访问服务就正常了, 在/etc/rc2.d/S98ETsplat中,加入
+	su root -c "etnotify -b -t 60 >/dev/null 2>&1"
+  
+  全局切换认证方式(掩码的方式, 不修改个性化参数)
+	etflags on [ off | status] etdppccbbdc
+  
+  全局个性化切换认证方式(修改个性化参数)
+	etflags on [ off | status] etdppccbbdc uaap 
+  
+  单独用户切换方式
+	etflags on [ off | status] etdppccbbdc uaap 登陆用户名
+  
+  营运管理部新增3人, 总共要开7人.
+  
+  rdp测试通过, 15:38, 速度很慢.
+  
+  IP限制不试
+  
+  权限表已经拿到.
+  
+----
+
+Jan 30, 2007 
+  
+  今天开始大量的增加主机IP限制.
+
+
+Feb 23, 2007 
+  
+  昨晚回到北京, 开始文档资料整理. 准备迎接切换和项目验收. 
+   
+  切换前的使用量似乎不大. 切换后的大量访问, 系统的表现如何, 我们将严阵
+  以待. 切换采取网络上的端口限制, 而不采用我们以有的IP限制方式. 
+  
+  北京市丰台区南三环西路10号 中国建设银行总行洋桥机房
+
+Feb 13, 2007 
+  
+  苏州项目签字盖章. 
+
+Feb 24, 2007 
+  
+  对于可疑操作的日志搜索, 是一个比较消耗精力的过程. 
+
+Feb 26, 2007 
+  
+  今天，需求分析写了一小部分，明天要写得更多。 
+
+Feb 28, 2007 
+  
+  由于电源和网络的原因，切换本周完成不了，但是安全服务器的备份要做。另
+  外要陆续安装新访问服务器的操作系统。
+
+Mar 26, 2007 
+	
+  =>      strcpy( sApplyTag, (char *)conf_get_acnode(NULL) );
+           apply_db_svr.c      --L13
+
+Mar 27, 2007 
+  
+  远程桌面是Windows Server 2003中一个比较酷的特性，它可以让你远程登录
+  一台机器并在其上工作，好像你就坐在那台机子前面操作一样。在Windows
+  2000 高级服务器版中，这个特性在远程管理模式中被称为终端服务。
+ 
+  Netmeetin Remote Desktop Sharing 服务启动不了，说是内部故障什么的。
+
+Mar 28, 2007 
+  
+  风险评估和权重表。有些列小宋说她也不知道。
+
+Mar 29, 2007 
+  
+  运维渠道切换方案。
+Nov 13, 2008 
+    
+  张磊过来玩。

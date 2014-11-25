@@ -1,0 +1,496 @@
+#-*-mode:org-*-
+#+LAST_MOBILE_CHANGE: 2014-11-26 03:43:03
+#+TITLE:      在Emacs上玩org-mode
+#+AUTHOR:     老布
+#+DATE:       2014年11月19日 星期三 22时10分11秒
+##+TODO:  将要做(t) 等待中(w@/!) | 已完成(d!) 已取消(c@)
+#+TODO:  TODO(t) WAIT(w@/!) | DONE(d!) CANCLE(c@)
+
+ 
+* WAIT 2015年较好的状态[0%]
+  - State "TODO"     from "WAIT"     [2014-11-25 二 22:55]
+  - State "DONE"     from "CANCLE"     [2014-11-25 二 22:54]
+  :PROPERTIES:
+  :ID:       71c8af4c-988f-482c-a84a-3b2d13ed4aa2
+  :END:
+
+** TODO 2015年3月准时毕业[0%]
+   :PROPERTIES:
+   :ID:       1e4d2bc7-f318-446b-b4ff-27d4a3767749
+   :END:
+*** TODO 向老师演示 pitch distance 的比较[0%]
+    DEADLINE: <2014-11-21 五>
+    :PROPERTIES:
+    :ID:       10cb2a94-c3b2-47ed-8fd0-8a37ae5c7b0d
+    :END:
+**** TODO lenvensthtan distance学习， 把公式整出来[0%]
+     DEADLINE: <2014-11-20 四 14:00>
+     - State "TODO"     from "WAIT"     [2014-11-19 三 05:26]
+     - State "TODO"     from "WAIT"     [2014-11-19 三 05:26]
+     :PROPERTIES:
+     :ID:       1f2929f1-3589-491b-ad28-2fbf432d2c4e
+     :END:
+**** TODO 程序[0%]
+     DEADLINE: <2014-11-20 四 20:00>
+     :PROPERTIES:
+     :ID:       460effb7-5cf9-44e4-9678-35e71bd53e57
+     :END:
+***** TODO 简单版[100%]
+      :PROPERTIES:
+      :ID:       f2b4043c-c4f3-41a0-b6aa-54482e07bfb5
+      :END:
+****** DONE 前8个16th为什么被清空，检查，并改正[100%]
+       CLOSED: [2014-11-19 三 05:18] DEADLINE: <2014-11-18 二 04:00>
+       - State "DONE"     from "WAIT"     [2014-11-19 三 05:18]
+       - State "WAIT"     from "TODO"     [2014-11-19 三 05:18]
+****** DONE 后4个16th为什么没有，检查，并改正[100%]
+       CLOSED: [2014-11-19 三 05:19]
+       - State "DONE"     from "WAIT"     [2014-11-19 三 05:19]
+       - State "WAIT"     from "DONE"     [2014-11-19 三 05:19]
+       - State "DONE"     from "TODO"     [2014-11-19 三 05:19]
+****** DONE 简单的edting distance加入计算[100%]
+       CLOSED: [2014-11-20 四 16:40] DEADLINE: <2014-11-19 三 16:35>
+       - State "DONE"     from "TODO"     [2014-11-20 四 16:40]
+****** DONE 程序内部临时升降记号的处理[100%]
+       CLOSED: [2014-11-20 四 16:40] DEADLINE: <2014-11-19 三 08:00>[0%]
+       - State "DONE"     from "TODO"     [2014-11-20 四 16:40]
+
+****** 一个4分音符必须分为4个16th才能比较pitch-distance。那么duration应该是4分音符的，还是16分音符的？
+       DEADLINE: <2014-11-20 四 18:00>
+       :PROPERTIES:
+       :ID:       b8aab014-ba48-407b-a9b6-6be03bd3472b
+       :END:
+
+******* DONE 概念搞清， 距离公式， edit_dist和duration和pitch_dis的关系
+         CLOSED: [2014-11-20 四 17:42]
+         - State "DONE"     from "TODO"     [2014-11-20 四 17:42]
+ example: 
+                   edit_dis = 5
+ 1个 4th  note   -------------------->   4 个  16th notes
+                                                | 
+                   edit_dis = 0                 |Sum(每个pitch的pitch_dis X  每个pitch的duration
+ 4个 16th notes  -------------------->   4 个  16th notes
+
+
+
+******* TODO 程序搞出来
+	:PROPERTIES:
+	:ID:       cacca9f1-16d9-4f29-9d5d-453ca214752e
+	:END:
+
+
+***** TODO 完美版[0%]
+      :PROPERTIES:
+      :ID:       6b0c08a0-102e-467d-826c-ad9c28564cd7
+      :END:
+****** TODO Mimi xml库的使用[%]
+       :PROPERTIES:
+       :ID:       d65ce752-d393-42e0-a700-b89c6b808348
+       :END:
+****** TODO 每个串的比较范围的动态选取[%]
+       :PROPERTIES:
+       :ID:       0ba2f76f-c85e-4abe-a8ef-1e247abef318
+       :END:
+****** TODO 音符的分裂方式，动态[%]
+       :PROPERTIES:
+       :ID:       e7458b41-893e-4cb1-9c20-c5d9e90e7645
+       :END:
+****** TODO editing distance 加入计算[%]
+       :PROPERTIES:
+       :ID:       094726f4-c865-459c-8317-19d98d9990fd
+       :END:
+
+*** TODO 论文[%]
+    :PROPERTIES:
+    :ID:       c9fcbf59-cbd6-4c57-8da4-48b7cf8068fc
+    :END:
+    
+
+** TODO 2015年3月前找到工作[50%]
+   :PROPERTIES:
+   :ID:       6ac852f9-9b37-4638-8eaf-04ecbfeb383d
+   :END:
+*** TODO 登录可以中文面试的网站[%]
+    :PROPERTIES:
+    :ID:       836661a1-9d7b-4ed8-9703-5e27c0092fa7
+    :END:
+*** DONE 回复就职课的调查邮件[%]
+    CLOSED: [2014-11-21 五 12:05] DEADLINE: <2014-11-21 五 12:00>
+    - State "DONE"       from "TODO"       <2014-11-21 五 12:05>
+    :PROPERTIES:
+    :ID:       38689c1d-df28-4267-aa6b-64065baefefe
+    :END:
+
+    
+| Name                 |         Phone |      Age |
+|----------------------+---------------+----------|
+| Koh Ki               | 080-4255-5698 |       37 |
+|----------------------+---------------+----------|
+| Kong Ling Kung       |   13612961602 |       33 |
+|----------------------+---------------+----------|
+| Ling Xi              | 0123412341234 |       34 |
+|----------------------+---------------+----------|
+| asdfasdfasdfasdfaasf |               |          |
+| asdfas;dlfkjasd;lfkj |      asdfasdf | asdfasdf |
+|----------------------+---------------+----------|
+
+
+  
+  
+* TODO 下次研究室seminar[%]
+About next seminar
+
+Date : 12/3(Wed) 15:10~
+Location : Our Lab
+Speaker : Suzuki, Hatano
+   SCHEDULED: <2014-12-03 三 15:10> 
+   :PROPERTIES:
+   :ID:       bde62ddd-f5ba-451b-b187-2f7a94bcae43
+   :END:
+
+
+
+* 网络书签
+** JAIST LIFE
+[[https://web-mail2013.jaist.ac.jp/?client%3Dadvanced&loginOp%3Dlogout][JAIST邮箱]]
+
+[[http://translate.google.cn/#en/zh-CN/][google翻译]]
+
+[[http://w.qq.com/][web QQ]]
+
+** Emacs
+[[http://orgmode.org/manual/index.html#Top][org手册, 英文，权威]]
+
+[[http://doc.norang.ca/org-mode.html#HowToUseThisDocument][org mode, 用纯文本中组织你的生活, 英文]]
+
+[[http://forum.ubuntu.org.cn/viewtopic.php?f%3D68&t%3D395158][Emacs Org Mode 小节， 长文慎入]]
+
+[[http://www.cnblogs.com/Open_Source/archive/2011/07/17/2108747.html#sec-1-3][Org-mode 简明手册]]
+
+[[http://floss.zoomquiet.io/data/20120301101333/index.html][org-mode, agenda view的使用]]
+
+[[http://darksun.blog.51cto.com/3874064/970737][org-mode进行时间管理(2)]]
+
+[[http://www.cnblogs.com/holbrook/archive/2012/04/12/2444992.html][org-mode，最好的文档编辑利器]]
+
+[[http://darksun.blog.51cto.com/3874064/1302920][mobilOrg, 手机端的org神器]]
+
+[[https://ioctocat.com/][github的iOS客户端，尝试和电脑同步org文件]]
+
+[[http://emacser.com/weibo.htm][Emacs中文网，比较新奇的东西都能找到，比如聊天eri，甚至微博]]
+
+[[http://lifegoo.pluskid.org/wiki/EmacsAsFileManger.html][Emacs 文件管理器]]
+
+
+** 代码排版导出测试
+   SCHEDULED: [2014-11-20 四 04:00-03:]
+
+| asdfasdf |                             | asdf | sdfasdf | asdf | B |
+|----------+-----------------------------+------+---------+------+---|
+|          | <2014-11-20 四>             | asdf |         |      |   |
+|----------+-----------------------------+------+---------+------+---|
+|          | [2014-11-20 四 04:00-05:00] |      |         |      |   |
+|----------+-----------------------------+------+---------+------+---|
+|          |                             |      |         |      |   |
+|          |                             |      |         |      |   |
+|          |                             |      |         |      |   |
+|          |                             |      |         |      |   |
+
+
+
+
+
+   
+* DONE org-mode 手机
+  CLOSED: [2014-11-26 三 01:44]
+  - State "DONE"       from "TODO"       [2014-11-26 三 01:44]
+  :PROPERTIES:
+  :ID:       35631fee-2f4b-4ea1-ae7e-151f412fa29b
+  :END:
+这玩意儿只能单项从手机上传到电脑，不能从电脑到手机。
+上面认识是错了，是双向的。
+
+** DONE DropBox手机版安装
+   CLOSED: [2014-11-21 五 12:10]
+   - State "DONE"     from "TODO"     [2014-11-21 五 12:10]
+** DONE DropBox电脑安装
+   CLOSED: [2014-11-21 五 12:10]
+   - State "DONE"     from "TODO"     [2014-11-21 五 12:10]
+** DONE MobileOrg使用
+   CLOSED: [2014-11-26 三 01:27]
+   - State "DONE"       from "TODO"       [2014-11-26 三 01:27]
+   :PROPERTIES:
+   :ID:       53b55ae6-cbeb-48a7-b032-6c877b6c7d90
+   :END:
+1. 手机上没搞懂怎么玩
+2. 也没有从手机的MobileOrg软件转移到手机DropBox中，所以也没有完成到电
+   脑的同步
+
+在电脑上启动同步守护进程
+ $ ~/.dropbox-dist/dropboxd & <Enter>
+
+即可实现手机到PC的同步。
+
+概念图如下
+
+在emacs的org-mode中：  org-mobile-push, org-mobile-pull
+                              |  把本地文件数据与~/DropBox/Apps/MobileOrg中同步
+在pc               ：  运行 dropboxd & 进程                              
+                              | 使得数据在pc的DropBox目录与手机的BropBox应用中同步 
+在手机             ：  执行MobileOrg的同步操作                                                                                 
+
+之前的失败就是因为缺了中间：pc上的守护进程
+
+在操作上，pc的进程一直工作，人员没有维护它。于是只感觉到在emacs中的
+push,pull，和在iPhone端的同步操作。
+
+
+   
+* TODO 手机github端的使用
+  :PROPERTIES:
+  :ID:       571b7480-03fe-48f5-aea4-b19c4f3d0e1d
+  :END:
+
+** DONE iOctocat手机安装
+   CLOSED: [2014-11-21 五 10:14]
+   - State "DONE"     from "TODO"     [2014-11-21 五 10:14]
+** DONE iOctocat手机使用
+   CLOSED: [2014-11-21 五 12:13]
+   - State "DONE"     from "TODO"     [2014-11-21 五 12:13]
+好像手机上只能读服务器文件。
+** TODO iOctoCat手机电脑的同步联动
+   :PROPERTIES:
+   :ID:       eba16b52-1bbc-4047-a068-3fd3d0c44f9c
+   :END:
+
+
+
+org-display-custom-times is a variable defined in `org.el'.
+Its value is t
+
+
+* WAIT ubuntu中的CTEX安装
+  - State "WAIT"     from "TODO"     [2014-11-21 五 19:36] \\
+    需解决
+  :PROPERTIES:
+  :ID:       d0023557-263f-4cd4-99e3-0655a2ec4364
+  :END:
+编译hike.pdf报错
+** 下了pdf手册							     :ATTACH:
+   :PROPERTIES:
+   :Attachments: texlive-zh-cn.pdf
+   :ID:       0735672b-045c-4643-9f39-73afd6541b4c
+   :END:
+[[http://www.tug.org/texlive/doc/texlive-zh-cn/texlive-zh-cn.pdf][TEX Live指南2014]]
+
+
+** DONE 命令行安装中[2014-11-21 五 18:17]
+   CLOSED: [2014-11-23 日 18:03]
+   - State "DONE"     from ""           [2014-11-23 日 18:03]
+命令行安装的开始来自这个
+[[http://tug.org/texlive/acquire-netinstall.html][从internat上进行安装]]
+
+** 为什么Linux下面的中文latex这么难搞
+[[https://code.google.com/p/ctex-kit/wiki/UnixFonts][Unix系统下ctex宏包的字体问题]]
+
+** $ pflatex hike, 报错： file picins.sty not found
+
+
+* Linux的命令行工具
+
+[[http://lcan.info/2011/03/cli-software/][CLI神器]]
+
+
+* Linux中的仙剑DOS版
+
+[[http://hi.baidu.com/qileilu/item/98177e770e2b2d3e70442313][linux仙剑]]
+
+[[http://pan.baidu.com/share/link?shareid%3D268651&uk%3D939986085][linux仙剑安装版下载]]
+
+[[http://tieba.baidu.com/p/1082803228][主要攻略]]
+[[http://pal.17173.com/pal1/map/pal1map.shtml][dos仙剑部分详细地图]]
+
+[[http://www.xianjian5.com/uploads/allimg/090630/1195520N56-32.jpg][蛤蟆洞]]
+
+
+* Phone上面玩不成Emacs。
+iOS的VIM已经安装了，不过ESC键和语法高亮还要配置一下。gcc还不能安装，说
+是libgcc没有，估计没跟着iOS7出来吧。
+
+** 吐槽一下iPhone＋蓝牙键盘的使用体验。
+
+*** iPhone4的硬件在iOS5上就很慢了，现在在IOS7上就更慢，键盘输入拼音进去了，变成汉字还得等半天。
+我想把手机降级回iOS4.3.3, 这样应该会快点儿。
+
+*** 键盘的空格键没有翻页功能，太恶心。
+
+
+** 一个所谓的带操作系统的手机，除了拨打接听电话，收发短信以及闹钟等正经业务功能之外，越能像个电脑一样经折腾就可玩性越大。
+相对于电脑，手机的优点是一体化，对电源的较弱依赖和更加便携，以及没有风
+扇噪音等等。硬件方面不是真的问题，而是厂家故意要在手机，平板电脑和笔记
+本上人为造成一些差异，这和相机厂商故意在不同价格线的机身人为屏蔽功能是
+一样的。多一条产品线，就多一个赚钱的渠道。回到苹果这个iOS，可以同时连接
+多个蓝牙设备但是故意不能同时挂载蓝牙键盘和蓝牙鼠标，这算是阻止用户用使
+用电脑的方式来使用手机吧。越狱之后有个收费的黑客软件解决了这个问题，呵
+呵。
+
+** 不是Emacs，没法加入时间戳
+所谓的软件功能，是匹配用户需求的同时给出完整的解决方案，也就是用内建框
+架去主动咬合用户的想象力。越能咬合得好的，就越是好软件。Emacs的org有说
+是："打破思维中的墙壁"，就是类似这样的感觉：这一秒钟想到的灵感，通过软
+件在下一秒钟变成真的结果跑出来，哈哈。Emacs把用户在用计算机时候的想法，
+操作和计算机的响应能力动态组织起来，让这些作为emcas的元子动作在下一秒钟
+变成真的。
+
+
+* 未来的输入输出							 :灵感:
+  DEADLINE: <2014-11-25 二> SCHEDULED: <2014-11-25 二 03:00>
+  :PROPERTIES:
+  :ID:       7b7a343d-b3ed-4796-b73c-6aade64014c2
+  :END:
+
+显示器和键盘的两个问题：
+
+1， 已经整出来很多劲椎病和手腕肌腱焱了
+
+2， 不便携，哪怕是笔记本电脑
+
+** 显示器
+
+  
+在瞳孔前面附着人体的一个高分辨率小面积的，类似google眼镜那种，一定会成
+为潮流。根本没有必要让人去面对一个什么屏幕。任何东西都是人眼那个不大的
+
+瞳孔看见的。所以挂在眼前把瞳孔喂饱了就行了。看手机也是有问题的，要低头
+对准屏幕，要用手举着手机，都是非人体工学的。
+
+file:/home/laub/download/google_glass.jpg
+
+
+
+# 加入相对路径，就不能直接看见。我日
+[[file:~/download/google_glass.jpg]]
+
+
+
+这个创意来自于斯瓦辛格的《终结者》，他作为机器人，在分析眼前看到的世界。
+呵呵，其实这么拍只是为了给电影观众一种"他的是机器人"的代入感，因为真的
+机器人只会吧分析结果通过内部总线传输编码，没有必要在眼球显示器上用字符
+滚屏来再看一遍。但是这个瞳孔显示器的创意对于人类用户，价值大。
+
+Google 眼镜待改进的：
+
+1. 眼镜的显示器是一个全反射镜片，把微型投影反射如眼镜，因此这个楞镜所
+   在的显示屏不能和其它景物重叠在瞳孔前面。
+
+2. 显示器和镜片是独立的，需要合成为一体。
+
+综上就是要实现类似普通眼镜的镜片成为显示器并且可以半透明的看到后面的景
+物。
+
+** 键盘
+目前手机的触摸输入就是为了让人的手指去点某个字母，让机器知道。可以让眼
+睛看着google眼镜中的键盘，让眼镜分析人眼盯着哪个字母来实现确认。这个技
+术已经有了。佳能的胶片机EOS3系列，就有所谓的眼控对焦，就是取景器同时分
+析人的瞳孔盯着那一堆对焦点中的哪一个点，然后用这个点来对焦，如果人眼看
+到别的地方，就用新位置上的对焦点来对焦。现代数码单反用户要么是手动用法
+轮或者六向盘指定对焦点。关于佳能眼控对焦我看到的最有意思的话是国内某摄
+影论坛一个拍了十几年的EOS3玩家上传了不少内衣照片，一个网友跟贴说："所有
+的片子焦点都在罩罩上面，大哥您这十几年的摄影真是没白玩儿"， ：）
+
+佳能这个眼控对焦的不足是：
+
+1，不是100％可靠，佳能自己也知道，所以没在一线的EOS1v上采用，就是给大家
+玩个乐子
+
+2， 对于带眼镜的拍摄者，由于眼镜镜片的干扰，可靠性更低。
+
+但是这个已经产品化了的"通过分析瞳孔中用户看着屏幕上的哪个点，那么系统就
+选择屏幕上的这个点"，这个概念已经实现了，是未来"瞳孔输入"的雏形。
+
+EOS3眼控对焦需改进的方面：
+
+1，物理载体是照相机的取景器，这一坨东西对于眼镜架子来说太重太大了，也影
+响美观；
+
+2，反向分析瞳孔的设备是一个冲向人眼的微型光学镜头，怎么保证这个镜头不被
+损坏并且美观的附加在google眼镜上。EOS3上边，这个镜头是安装在目镜以内的
+取景器内，全封闭，保护得很好。
+
+*** 如果眼控输入太高端，还有一个亲民的。
+
+物理学家史蒂芬.霍金全身瘫痪，只有两个手指可以轻微运动。两个美国人给他开
+发了用小摇杆进行快速输入的系统，让他输入的速度比正常说话稍慢一些（估计
+一定比我现在iPhone4上蓝牙键盘输入中文快多了）。摇杆儿＋智能字母单词的选
+取软件，也是一个比键盘更好的方案。总之不要把人的头和十指绑在设备上。理
+想的情况就是躺在床上，通过眨眼睛就可以编程序。
+
+
+* org-mode
+** 输出脑图
+安装了freemind，导出为jpg，如下。
+
+file:/home/laub/org/laub.org.jpeg
+
+
+** DONE 插入文件
+   CLOSED: [2014-11-25 二 11:11]
+   - State "DONE"     from "TODO"           [2014-11-25 二 11:11]
+   file:/绝对路径/xxx.jpg
+* TODO Emacs修改
+  :PROPERTIES:
+  :ID:       309ff2cc-4f06-429e-bb2f-87d421a8578e
+  :END:
+控制台下的emacs， 那个全局的“显示行号”函数要改：
+
+1. 行号和正文中插入一个字符的空列
+
+2. 行号字体的颜色改成浅绿色之类
+
+
+
+
+
+* iPhone4维护
+iOS降级到4.3.3
+
+没有备份shsh，试验小伞 TinyUnbrellar
+
+* 系统维护
+
+[[http://forum.ubuntu.org.cn/viewtopic.php?f%3D120&t%3D18334][IRC使用]]
+
+[[http://forum.ubuntu.org.cn/viewtopic.php?f%3D180&t%3D462620&start%3D15][ubuntu 13.04 软件源 404 错误解决]]
+
+
+   
+
+* 手机mobileOrg试玩
+[2014-11-26 周三 01:58]
+** 二级目录 
+我怎么加入时间段？
+
+没有时间段，只有一个静态时间戳。
+
+那么，怎么增加三级目录？三个星号是没用的，同步到pc之后，星号前面会自动
+加空格，必须在emacs中手动维护编辑，再下推，才在手机有效。
+
+*** 估计不会生效
+
+* DONE 再试一次大纲
+  CLOSED: [2014-11-26 三 03:41]
+  - State "DONE"       from ""           [2014-11-26 三 03:41]
+[2014-11-26 周三 03:32]
+** DONE buzhidao nizenmeshuo
+   CLOSED: [2014-11-26 三 03:43]
+   - State "DONE"       from ""           [2014-11-26 三 03:43]
+
+Add sff gagged afffdddg
+
+*** DONE fddf
+    CLOSED: [2014-11-26 三 03:41]
+ Fddf
+Sett
+ Fred
+* No title
+[2014-11-26 周三 03:41]

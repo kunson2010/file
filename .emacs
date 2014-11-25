@@ -1,32 +1,160 @@
+;; MobileOrg
+(setq org-directory "~/org")
+;; Set to the name of the file where new notes will be stored
+(setq org-mobile-inbox-for-pull "~/org/laub.org")
+;; Set to <your Dropbox root directory>/MobileOrg.
+(setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
+
+
+
+;; å¯¼å‡ºè„‘å›¾
+;; (require 'ox-freemind)
+
+
+
+;; mew é‚®ä»¶å®¢æˆ·ç«¯
+(autoload 'mew "mew" nil t)
+(autoload 'mew-send "mew" nil t)
+ 
+;; Optional setup (Read Mail menu for Emacs 21):
+(if (boundp 'read-mail-command)
+        (setq read-mail-command 'mew))
+ 
+;; Optional setup (e.g. C-xm for sending a message):
+(autoload 'mew-user-agent-compose "mew" nil t)
+(if (boundp 'mail-user-agent)
+        (setq mail-user-agent 'mew-user-agent))
+(if (fboundp 'define-mail-user-agent)
+        (define-mail-user-agent
+          'mew-user-agent
+          'mew-user-agent-compose
+          'mew-draft-send-message
+          'mew-draft-kill
+          'mew-send-hook))
+
+
+
+
+
+;; ;; å¾®åšï¼Œæ²¡æˆåŠŸ
+;; (add-to-list 'load-path "/home/laub/emacs/weibo/weibo.emacs-1.0/")
+;; (require 'weibo)
+
+
+;; å¢åŠ è½¯ä»¶åŒ…
+(require 'package)
+(add-to-list
+ 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list
+ 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+(add-to-list
+ 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+(package-initialize)
+
+;; è‡ªåŠ¨è¡¥é½
+(require 'auto-complete-config)
+(ac-config-default)
+
+;; org mode, agenda å¿«æ·é”®
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+
+;; è®®ç¨‹æ–‡ä»¶
+(setq org-agenda-files (list "~/org/laub.org"))
+
+;; org ä¸­çš„çŠ¶æ€
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "WAIT(w)" "STRT(s)" "|"
+		  "DONE(d)" "CANL(c)")))
+;; (setq org-todo-keywords
+;;       '((sequence "å°†è¦åš(t)" "ç­‰å¾…ä¸­(w)" "å·²å¼€å§‹(s)" "|"
+;;                   "å·²å®Œæˆ(d)" "å·²å–æ¶ˆ(c)")))
+
+;; org ä½¿ç”¨
+(require 'org-agenda-property)
+
+;; org ä¸­ä½¿ç”¨æ—¥å†
+(setq org-agenda-include-diary t)
+
+;;æ—¶é—´æ—¥æœŸæ ¼å¼ 
+(setq display-time-format "%c")
+;; è®¾ç½®æ—¶é—´æ ¼å¼
+(setq format-time-string "%c")
+
+;; (setq org-display-custom-times t)    ;ä½¿orgçš„æ—¶é—´æˆ³é»˜è®¤å˜æˆä¸­æ–‡æ ¼å¼ï¼Œä½†æ˜¯æ²¡èµ·ä½œç”¨
+
+
+;; orgä¸­æ—¶é—´æˆ³çš„æ ¼å¼ï¼Œä¸­æ–‡æ ¼å¼ï¼Œæ”¾å¼€äº†æŠ¥é”™ï¼Œæ‰€ä»¥ç›´æ¥æ”¹äº†org.el
+;; (defcustom org-time-stamp-custom-formats
+;;   '("<%Yå¹´%mæœˆ%dæ—¥ %A>" . "<%Yå¹´%mæœˆ%dæ—¥ %A %Hæ—¶%Måˆ†%Sç§’>") 
+
+;; é¡¹ç›®å®Œæˆæ—¶è®¡å…¥æ—¶é—´æˆ³å’Œè¾“å…¥è®°å½•
+(setq org-log-done 'time)
+(setq org-log-done 'note)
+
+;; æœ¬åœ°æ—¶é—´æ ¼å¼
+;; (add-hook 'org-mode-hook
+;;           (lambda ()
+;;             (set (make-local-variable 'system-time-locale) "C")))
+
+;; iimage modeï¼ŒåŠ å…¥å›¾ç‰‡
+(autoload 'iimage-mode "iimage" "Support Inline image minor mode." t)
+(autoload 'turn-on-iimage-mode "iimage" "Turn on Inline image minor mode." t)
+(setq org-startup-with-inline-images 1) ;; will inlined display image when you open a file
+
+
+;; org å¯¼å‡ºhtmlçš„ç¾åŒ–
+;; (setq home-path (expand-file-name "~")) 
+(defvar my-emacs-path "/home/laub/emacs/static/css/stylesheet.css")
+(setq org-html-head-extra (concat "<link rel=\"stylesheet\" href=" my-emacs-path " type=\"text/css\" />")) 
+
+;; orgä¸­çš„æ—¶é—´ç»Ÿè®¡
+(setq org-clock-persist 'history)
+(org-clock-persistence-insinuate)
+
+
+;; æ·±è‰²èƒŒæ™¯çš„ä¸»é¢˜
+(load-theme 'afternoon t)
+
+;; è‰²å½©ä¸»é¢˜
+(add-to-list 'load-path "/home/laub/.emacs.d/elpa/color-theme-20080305.34/")
+(require 'color-theme)
+(setq color-theme-is-global t)
+(color-theme-initialize)
+;; (color-theme-dark-laptop-hood)
+
+;; è‡ªå®šä¹‰ä¸»é¢˜, have no effect
+;; (add-to-list 'custom-theme-load-path "/home/laub/.emacs.d/theme/")
+;; (setq molokai-theme-kit t)
+;; (load-theme molokai)
+
+
+;; -----------------------  è€çš„é…ç½®
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(custom-set-faces)
 
 
-;; ÉèÖÃÓ¢ÎÄ×ÖÌå
-(set-face-attribute  
-'default nil :font "Courier New-12")  
-;; ÖĞÎÄ×ÖÌå
-(dolist (charset '(kana han symbol cjk-misc bopomofo))  
-(set-fontset-font (frame-parameter nil 'font)  
-charset  
-(font-spec :family "Î¢ÈíÑÅºÚ" :size 17))) 
+;; è®¾ç½®è‹±æ–‡å­—ä½“
+;; (set-face-attribute  
+;; 'default nil :font "ubuntu mono-13")
 
-(global-linum-mode 1) ;; ÏÔÊ¾ĞĞºÅ
-
-(setq default-frame-alist ;; ³õÊ¼´óĞ¡
-'((height . 45) (width . 150) (menu-bar-lines . 20) (tool-bar-lines . 0))) 
+;; ä¸­æ–‡å­—ä½“
+;; (dolist (charset '(kana han symbol cjk-misc bopomofo))  
+;;   (set-fontset-font (frame-parameter nil 'font)  
+;;                     charset  
+;;                     (font-spec :family "AR PL UKai CN" :size 18)))
 
 
+;; åˆå§‹å¤§å°
+;; (setq default-frame-alist 
+;; '((height . 55) (width . 180) (menu-bar-lines . 20) (tool-bar-lines . 0))) 
 
 ;; Red Hat Linux default .emacs initialization file  ; -*-  mode: emacs-lisp -*-
 ;; Set up the keyboard so the delete key on both the regular keyboard
@@ -40,13 +168,13 @@ charset
 (setq make-backup-files nil)
 (setq-default make-backup-files nil)
 
-;; Óï·¨¼ÓÁÁ
+;; è¯­æ³•åŠ äº®
 (global-font-lock-mode t)
-;; Ñ¡È¡ÎÄ±¾¿é¼ÓÁÁ
+;; é€‰å–æ–‡æœ¬å—åŠ äº®
 (setq-default transient-mark-mode t)
-;; ÎÄ¼ş×ÜÊÇÒ»ĞÂĞĞ½áÎ²:--·ñ--
+;; æ–‡ä»¶æ€»æ˜¯ä¸€æ–°è¡Œç»“å°¾:--å¦--
 (setq require-final-newline nil)
-;; ÒÆ¶¯µ½ÎÄ±¾Ä©Î²Ê±, ²»¼ÓÈëĞÂĞĞ
+;; ç§»åŠ¨åˆ°æ–‡æœ¬æœ«å°¾æ—¶, ä¸åŠ å…¥æ–°è¡Œ
 (setq next-line-add-newlines nil)
 
 (when window-system
@@ -55,253 +183,305 @@ charset
   ;; use extended compound-text coding for X clipboard
   (set-selection-coding-system 'compound-text-with-extensions))
 
-;; ¹Ø±ÕEmacsµÄ"¿ª»ú¶¯»­"
+;; å…³é—­Emacsçš„"å¼€æœºåŠ¨ç”»"
 (setq inhibit-startup-message t)
 
 ;; default to better frame titles
 (setq frame-title-format
       (concat  "%b - emacs@" system-name))
 
-;; ¹Ø±ÕC-g Ö®ÀàµÄÉùÒô, ÖÕÓÚÓĞĞ§ÁË
+;; å…³é—­C-g ä¹‹ç±»çš„å£°éŸ³, ç»ˆäºæœ‰æ•ˆäº†
 (setq ring-bell-function 'ignore)
 
-;; Ö»·­Ò»ĞĞ
+;; åªç¿»ä¸€è¡Œ
 (setq scroll-step 1
-      scroll-margin 0
+      scroll-margin 3                   ; ç•™3è¡Œå¼€å§‹æ»šåŠ¨
       scroll-conservatively 10000)
 
-;; ĞĞºÅ,ÁĞºÅ
+;; è¡Œå·,åˆ—å·
+(global-linum-mode 1) ;; æ˜¾ç¤ºè¡Œå·
+
+
 (setq line-number-mode t)
 (setq column-number-mode t)
 
-;; À¨ºÅÆ¥ÅäÊ±ÏÔÊ¾ÁíÍâÒ»±ßµÄÀ¨ºÅ£¬¶ø²»ÊÇ·³ÈËµÄÌøµ½ÁíÒ»¸öÀ¨ºÅ¡£
+;; æ‹¬å·åŒ¹é…æ—¶æ˜¾ç¤ºå¦å¤–ä¸€è¾¹çš„æ‹¬å·ï¼Œè€Œä¸æ˜¯çƒ¦äººçš„è·³åˆ°å¦ä¸€ä¸ªæ‹¬å·ã€‚
 (show-paren-mode t)
 (setq show-paren-style 'parentheses)
 
-;; ×Ô¶¯ÅÅ°æ
+;; ;; è¿›è¡Œæ‹¬å·åŒ¹é…çš„è·³è·ƒ
+;; (global-set-key "\C%" 'match-paren)
+
+;; (defun match-paren (arg)
+;;   "åœ¨æ’‡é…çš„æ‹¬å·é—´è·³è·ƒï¼Œæˆ–è€…è¾“å…¥ %"
+;;   (interactive "p")
+;;   (cond ((looking-at "\\s\(") (forward-list 1) (backward-char 1))
+;;      ((looking-at "\\s\)") (forward-char 1) (backward-list 1))
+;;      ;; (t (self-insert-command (or arg 1)))
+;;   )
+;; ) 
+
+;; è‡ªåŠ¨æ’ç‰ˆ
 (auto-fill-mode t)
 
-;;Êó±ê×Ô¶¯±Ü¿ªÖ¸Õë£¬Èçµ±ÄãÊäÈëµÄÊ±ºò£¬Ö¸Õëµ½ÁËÊó±êµÄÎ»ÖÃ£¬Êó±êÓĞµãµ²×¡ÊÓÏßÁË   
+;;é¼ æ ‡è‡ªåŠ¨é¿å¼€æŒ‡é’ˆï¼Œå¦‚å½“ä½ è¾“å…¥çš„æ—¶å€™ï¼ŒæŒ‡é’ˆåˆ°äº†é¼ æ ‡çš„ä½ç½®ï¼Œé¼ æ ‡æœ‰ç‚¹æŒ¡ä½è§†çº¿äº†   
 (mouse-avoidance-mode 'animate)   
-;;ÔÊĞí×Ô¶¯´ò¿ªÍ¼Æ¬£¬ÈçwikiÀïÃæ   
+;;å…è®¸è‡ªåŠ¨æ‰“å¼€å›¾ç‰‡ï¼Œå¦‚wikié‡Œé¢   
 (auto-image-file-mode)   
 
 
-;; ¸ü·½±ãµÄbufferÇĞ»» 
-;;(require 'ibuffer)
-;;(global-set-key (kbd "C-x C-b") 'ibuffer)
-
-;; ÏÔÊ¾ĞĞºÅ
-;;(require 'setnu)
+;; æ›´æ–¹ä¾¿çš„bufferåˆ‡æ¢ 
+(require 'ibuffer)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 
-;; Ê¶±ğCÎÄ¼şµÄtypedef
-;;(require 'ctypes)
-;;(ctypes-auto-parse-mode 1)
+;; è¯†åˆ«Cæ–‡ä»¶çš„typedef
+;; (require 'ctypes)
+;; (ctypes-auto-parse-mode 1)
 
-;; shellÊÇ²»³öÏÖÂÒÂë
+;; shellæ˜¯ä¸å‡ºç°ä¹±ç 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ;; to fill paragraphs with a single space after each period
 (setq sentence-end "[.?!][]\"')}]*\\($\\|[ \t]\\)[ \t\n]*")
 (setq sentence-end-double-space nil)
-;; ÓÊ¼ş¼ÙÃû
+;; é‚®ä»¶å‡å
 (define-mail-alias "laub" "lengkunvenly@163.com")
 
-;; ÓÊ¼ş¸½¼ş
+;; é‚®ä»¶é™„ä»¶
 (setq mail-user-agent 'message-user-agent)
 
-;; ¼òĞ´À©Õ¹
+;; ç®€å†™æ‰©å±•
 (setq-default abbrev-mode t)
 ;;(read-abbrev-file "~/.abbrev_defs")
 (setq save-abbrevs t)
 
-;;Ê±¼äÈÕÆÚ¸ñÊ½ 
-(setq display-time-format "%c %p")
-
-;; M-C-z °ó¶¨Îªµ¹·­ÏÂÒ»¸ö´°¿Ú 
+;; M-C-z ç»‘å®šä¸ºå€’ç¿»ä¸‹ä¸€ä¸ªçª—å£ 
 (global-set-key  "\e\C-z" 'scroll-other-window-down)
 
 (global-set-key  "\e\C-m" 'man)
-;; Ö±½ÓÏÔÊ¾Í¼Æ¬, XÖĞÓĞĞ§, Èç¹ûÔÚframbuferÖĞÒ²ÓĞĞ§¾ÍºÃÁË
+;; ç›´æ¥æ˜¾ç¤ºå›¾ç‰‡, Xä¸­æœ‰æ•ˆ, å¦‚æœåœ¨frambuferä¸­ä¹Ÿæœ‰æ•ˆå°±å¥½äº†
 (auto-image-file-mode)
 
-;; µ½Ö¸¶¨ĞĞµÄ¼üºÏÏÒ
+;; åˆ°æŒ‡å®šè¡Œçš„é”®åˆå¼¦
 (global-set-key "\C-xg" 'goto-line)
-;; ±£´æ.emacsÊ±, ×Ô¶¯Î»±àÒë  -Ã»Æğ×÷ÓÃ 2006Äê08ÔÂ17ÈÕ ĞÇÆÚËÄ 23Ê±24·Ö52Ãë
+;; ä¿å­˜.emacsæ—¶, è‡ªåŠ¨ä½ç¼–è¯‘  -æ²¡èµ·ä½œç”¨ 2006å¹´08æœˆ17æ—¥ æ˜ŸæœŸå›› 23æ—¶24åˆ†52ç§’
 ;; (add-hook 'after-save-hook (lambda ()
-;; 			     (when (string = buffer-file-name (expand-file-name "~/.emacs"))
-;; 			       (emacs-lisp-byte-compile))))
+;;                           (when (string = buffer-file-name (expand-file-name "~/.emacs"))
+;;                             (emacs-lisp-byte-compile))))
 
 
-;; M-p  °ó¶¨ÎªÉèÖÃÎÄ±¾¿é
+;; M-p  ç»‘å®šä¸ºè®¾ç½®æ–‡æœ¬å—
 (global-set-key "\ep" 'set-mark-command)
  
 ;; F3 display-time-mode
 (global-set-key [f3] 'display-time-mode)
 
-;; F4 ÈÕÆÚ´Á
+;; F4 æ—¥æœŸæˆ³
 (global-set-key [f4]
-		(lambda()
-		  (interactive)
-		  (insert
-		   (format-time-string "%c"))))
+                (lambda()
+                  (interactive)
+                  (insert
+                   (format-time-string "%c"))))
 
-;; F5 ÈÕÀú
-(global-set-key [f5] (function (lambda()
-				   (interactive)
-				   (calendar)
-				   (setq diary-file "~/emacs/diary")  ;ÈÕ¼ÇÎÄ¼ş
-				   (calendar-unmark)	     ;Ë¢µô±ê¼Ç
-				   (calendar-unmark)	     ;Ë¢µô±ê¼Ç
-				   (mark-diary-entries)	     ;ÖØĞÂ±ê¼Ç
-				   (mark-calendar-holidays)  ;±ê¼Ç½ÚÈÕ
-				   (message "¸öÈËÈÕ¼Ç, ^_^")))) 
-
-;; F8 ¹¤×÷ÈÕÀú
-(global-set-key [f8] (function (lambda()
-				   (interactive)
-				   (calendar)
-				   (setq diary-file "~/emacs/diary_work")  ;ÈÕ¼ÇÎÄ¼ş
-				   (calendar-unmark)	     ;Ë¢µô±ê¼Ç
-				   (mark-diary-entries)	     ;ÖØĞÂ±í¼Ç
-				   (message "¹¤×÷±Ê¼Ç")))) 
+;; ;; F5 æ—¥å†
+;; (global-set-key [f5] (function (lambda()
+;;                                 (interactive)
+;;                                 (calendar)
+;;                                 (setq diary-file "~/emacs/diary")  ;æ—¥è®°æ–‡ä»¶
+;;                                 (calendar-unmark)         ;åˆ·æ‰æ ‡è®°
+;;                                 (mark-diary-entries)      ;é‡æ–°æ ‡è®°
+;;                                 (mark-calendar-holidays)  ;æ ‡è®°èŠ‚æ—¥
+;;                                 (message "ä¸ªäººæ—¥è®°, ^_^")))) 
 
 
-;; F11 ¼¼ÊõÈÕÀú
-(global-set-key [f11] (function (lambda()
-				   (interactive)
-				   (calendar)
-				   (setq diary-file "~/emacs/diary_tech")  ;ÈÕ¼ÇÎÄ¼ş
-				   (calendar-unmark)	     ;Ë¢µô±ê¼Ç
-				   (mark-diary-entries)	     ;ÖØĞÂ±í¼Ç
-				   (message "¼¼Êõ±Ê¼Ç")))) 
+;; F5 å¤šåŠŸèƒ½æ—¥å†
+(defun load_diary(arg)
+  (interactive "cè¯·é€‰æ‹©æ‚¨è¦è£…é…çš„æ—¥è®°ç±»å‹: p-ä¸ªäºº, w-å·¥ä½œ, t-æŠ€æœ¯, l-æ„Ÿæƒ…, f-æ‘„å½±ï¼Œ v-å°æç´")
+  (progn
+    (calendar)    
+    
+    (cond ((char-equal ?p arg)
+           (setq diary-file "~/emacs/diary"))
+          ((char-equal ?w arg)
+           (setq diary-file "~/emacs/diary_work"))
+          ((char-equal ?t arg)
+           (setq diary-file "~/emacs/diary_tech"))
+          ((char-equal ?l arg)
+           (setq diary-file "~/emacs/diary_love"))
+          ((char-equal ?f arg)
+           (setq diary-file "~/emacs/diary_film"))
+          ((char-equal ?v arg)
+           (setq diary-file "~/emacs/diary_violin")))
+    
+    (calendar-unmark)                   ;åˆ·æ‰æ ‡è®°
+    (mark-diary-entries)                ;é‡æ–°æ ‡è®°
+    (mark-calendar-holidays)            ;æ ‡è®°èŠ‚æ—¥
 
-;; F6 ¼ÆËãÆ÷
+    (cond ((char-equal ?p arg)
+           (message "ä¸ªäººæ—¥è®°, ^_^"))
+          ((char-equal ?w arg)
+           (message "å·¥ä½œè®°å½•, T_T"))
+          ((char-equal ?t arg)
+           (message "æŠ€æœ¯ç¬”è®°, ^O^"))
+          ((char-equal ?l arg)
+           (message "æ„Ÿæƒ…æ—¥è®°, ^_*"))
+          ((char-equal ?f arg)
+           (message "æ‘„å½±æ—¥è®°, ^_*"))
+          ((char-equal ?v arg)
+           (message "å°æç´, ^_^")))))
+
+
+(global-set-key [f5] 'load_diary)
+
+
+
+
+;; F6 è®¡ç®—å™¨
 (global-set-key [f6] 'calculator)
 
-;; F7 ±àÒë
-(global-set-key [f7] 'gdb)
+;; F7 ç¼–è¯‘
+(global-set-key [f7] 'compile)
+'(compile-command "make")
 
-;; F9 ×Ô¶¯Ëõ½ø
-(global-set-key [f9] 'auto-fill-mode)
 
-;; F12 ÊéÇ©ÁĞ±í
+;; F8 è°ƒè¯•
+(global-set-key [f8] 'gdb)
+
+;; F9 ç”¨ç©ºæ ¼å¡«å†™tabåˆ¶è¡¨ç¬¦ï¼Œå¸Œæœ›å…ˆåŠ ä¸Šå…¨bufferçš„è‡ªåŠ¨é€‰å–ã€‚
+(global-set-key [f9] 'untabify)
+
+;; F11 agendaæ¨¡å¼
+(global-set-key [f11] 'org-agenda)
+
+;; F12 ä¹¦ç­¾åˆ—è¡¨
 (global-set-key [f12] 'bookmark-bmenu-list)
-;; C-x r C-n ¸ÄÊéÇ©Ãû
+;; C-x r C-n æ”¹ä¹¦ç­¾å
 (global-set-key "\C-xr\C-n" 'bookmark-rename)
 
-;; ÊéÇ©ÎÄ¼ş
+;; ä¹¦ç­¾æ–‡ä»¶
 (setq bookmark-file "~/emacs/.emacs.bmk")
 
-;; todoÎÄ¼ş 
+;; todoæ–‡ä»¶ 
 (setq todo-file-do "~/emacs/todo/do")
 (setq todo-file-done "~/emacs/todo/done")
 (setq todo-file-top "~/emacs/todo/top")
 
-;; rmailÎÄ¼ş
+
+
+(add-to-list
+ 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list
+ 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+(add-to-list
+ 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+(package-initialize)
+(require 'package)
+
+;; rmailæ–‡ä»¶
 (setq rmail-file-name "~/emacs/RMAIL")
 
-;; ÎÒµÄ¾­Î³¶È, ÓÃÒÔ¼ÆËã±¾µØÈÕ³öÈÕÂäÊ±¼ä£¬¾­Î³¶ÈÓÃgoogleEarth»ñµÃ¡£ 
+;; æˆ‘çš„ç»çº¬åº¦, ç”¨ä»¥è®¡ç®—æœ¬åœ°æ—¥å‡ºæ—¥è½æ—¶é—´ï¼Œç»çº¬åº¦ç”¨googleEarthè·å¾—ã€‚ 
 
-;; ÉîÛÚÉÏÉ³, 22.526116, 114.02859
-;; ÉîÛÚÌÒÔ´´å, 22.563166£¬113.970573
-;; ÈËÃñÓ¢ĞÛ¼ÍÄî±® 39.903267 116.391631
+;; æ·±åœ³ä¸Šæ²™, 22.526116, 114.02859
+;; æ·±åœ³æ¡ƒæºæ‘, 22.563166ï¼Œ113.970573
+;; äººæ°‘è‹±é›„çºªå¿µç¢‘ 39.903267 116.391631
 ;; JAIST  36.442981 136.593370
 
-;;(setq calendar-latitude 42.402440)           ;;Î³¶È ÕıÊı±±Î³
-;;(setq calendar-longitude 117.261489)         ;;¾­¶È ÕıÊı¶«¾­
-;;(setq calendar-location-name "Èüº±°ÓÉÏ") ;;µØÃû
+;;(setq calendar-latitude 42.402440)           ;;çº¬åº¦ æ­£æ•°åŒ—çº¬
+;;(setq calendar-longitude 117.261489)         ;;ç»åº¦ æ­£æ•°ä¸œç»
+;;(setq calendar-location-name "èµ›ç½•åä¸Š") ;;åœ°å
 
- (setq calendar-latitude 36.442981 )           ;;Î³¶È ÕıÊı±±Î³
- (setq calendar-longitude 136.593370)          ;;¾­¶È ÕıÊı¶«¾­
- (setq calendar-location-name "±±Â½ÏÈ¶Ë¿ÆÑ§¼¼Êõ´óÑ§Ôº´óÑ§")  ;;µØÃû
+ (setq calendar-latitude 36.442981 )           ;;çº¬åº¦ æ­£æ•°åŒ—çº¬
+ (setq calendar-longitude 136.593370)          ;;ç»åº¦ æ­£æ•°ä¸œç»
+ (setq calendar-location-name "åŒ—é™†å…ˆç«¯ç§‘å­¦æŠ€æœ¯å¤§å­¦é™¢å¤§å­¦")  ;;åœ°å
 
-;; (setq calendar-latitude 39.5)           ;;Î³¶È ÕıÊı±±Î³
-;; (setq calendar-longitude 115)         ;;¾­¶È ÕıÊı¶«¾­
-;; (setq calendar-location-name "Ğ¡ÎåÌ¨¶«Ì¨¶¥") ;;µØÃû
+;; (setq calendar-latitude 39.5)           ;;çº¬åº¦ æ­£æ•°åŒ—çº¬
+;; (setq calendar-longitude 115)         ;;ç»åº¦ æ­£æ•°ä¸œç»
+;; (setq calendar-location-name "å°äº”å°ä¸œå°é¡¶") ;;åœ°å
 
-;; (setq calendar-latitude  -27.598)           ;;Î³¶È ÕıÊı±±Î³
-;; (setq calendar-longitude 153.085)         ;;¾­¶È ÕıÊı¶«¾­
-;; (setq calendar-location-name "²¼ÀïË¹°à") ;;µØÃû
+;; (setq calendar-latitude  -27.598)           ;;çº¬åº¦ æ­£æ•°åŒ—çº¬
+;; (setq calendar-longitude 153.085)         ;;ç»åº¦ æ­£æ•°ä¸œç»
+;; (setq calendar-location-name "å¸ƒé‡Œæ–¯ç­") ;;åœ°å
 
-;; (setq calendar-latitude  45.7716)           ;;Î³¶È ÕıÊı±±Î³
-;; (setq calendar-longitude 126.5622)         ;;¾­¶È ÕıÊı¶«¾­
-;; (setq calendar-location-name "¹ş¶û±õ") ;;µØÃû
+;; (setq calendar-latitude  45.7716)           ;;çº¬åº¦ æ­£æ•°åŒ—çº¬
+;; (setq calendar-longitude 126.5622)         ;;ç»åº¦ æ­£æ•°ä¸œç»
+;; (setq calendar-location-name "å“ˆå°”æ»¨") ;;åœ°å
 
-;; (setq calendar-latitude   22.566239)           ;;Î³¶È ÕıÊı±±Î³
-;; (setq calendar-longitude 113.973828)         ;;¾­¶È ÕıÊı¶«¾­
-;; (setq calendar-location-name "ÉîÛÚÌÒÔ´´å") ;;µØÃû
+;; (setq calendar-latitude   22.566239)           ;;çº¬åº¦ æ­£æ•°åŒ—çº¬
+;; (setq calendar-longitude 113.973828)         ;;ç»åº¦ æ­£æ•°ä¸œç»
+;; (setq calendar-location-name "æ·±åœ³æ¡ƒæºæ‘") ;;åœ°å
 
 
-;; ÈÕÀúÏà¹ØµÄÉèÖÃ
-(setq mark-holidays-in-calendar t)          ; ±ê¼Ç½Ú¼ÙÈÕ  
-(setq view-calendar-holidays-initially nil)   ; ²»ÏÔÊ¾½ÚÈÕÁĞ±í  
+;; æ—¥å†ç›¸å…³çš„è®¾ç½®
+(setq mark-holidays-in-calendar t)          ; æ ‡è®°èŠ‚å‡æ—¥  
+(setq view-calendar-holidays-initially nil)   ; ä¸æ˜¾ç¤ºèŠ‚æ—¥åˆ—è¡¨  
 
-(setq general-holidays '((holiday-fixed 1 1   "Ôªµ©")  
-                         (holiday-fixed 2 14  "ÇéÈË½Ú")  
-                         (holiday-fixed 4 1   "ÓŞÈË½Ú")  
-                         (holiday-fixed 12 25 "Ê¥µ®½Ú")  
-                         (holiday-fixed 10 1  "¹úÇì½Ú")  
-                         (holiday-float 5 0 2 "Ä¸Ç×½Ú")   ;5ÔÂµÄµÚ¶ş¸öĞÇÆÚÌì  
-                         (holiday-float 6 0 3 "¸¸Ç×½Ú")  
+(setq general-holidays '((holiday-fixed 1 1   "å…ƒæ—¦")  
+                         (holiday-fixed 2 14  "æƒ…äººèŠ‚")  
+                         (holiday-fixed 4 1   "æ„šäººèŠ‚")  
+                         (holiday-fixed 12 25 "åœ£è¯èŠ‚")  
+                         (holiday-fixed 10 1  "å›½åº†èŠ‚")  
+                         (holiday-float 5 0 2 "æ¯äº²èŠ‚")	;5æœˆçš„ç¬¬äºŒä¸ªæ˜ŸæœŸå¤©  
+                         (holiday-float 6 0 3 "çˆ¶äº²èŠ‚")  
                          ))  
   
-(setq local-holidays '((holiday-chinese 12 30  "´º½Ú³ıÏ¦ (À°ÔÂÈıÊ®)")  
-                       (holiday-chinese 1 1    "´óÄê³õÒ» (ÕıÔÂ³õÒ»)")  
-               	       (holiday-chinese 1 15  "ÔªÏü½Ú (ÕıÔÂÊ®Îå)")  
-                       (holiday-chinese 5 5   "¶ËÎç½Ú (ÎåÔÂ³õÎå)")  
-                       (holiday-chinese 9 9   "ÖØÑô½Ú (¾ÅÔÂ³õ¾Å)")  
-                       (holiday-chinese 8 15  "ÖĞÇï½Ú (°ËÔÂÊ®Îå)")  
-                       ;; ÉúÈÕ  
-                       ;; (birthday-fixed 2 28  "°Ö°ÖÉúÈÕ(1939)")  
-                       ;; (birthday-fixed 3 8  "ÂèÂèÉúÈÕ(1953)")  
-                       ;; (holiday-chinese 6 4 "ç÷ç÷ÉúÈÕ")           ;ÒõÀúÉúÈÕ
-                       ))  
+(setq local-holidays '((holiday-chinese 12 30  "æ˜¥èŠ‚é™¤å¤• (è…Šæœˆä¸‰å)")  
+                       (holiday-chinese 1 1    "å¤§å¹´åˆä¸€ (æ­£æœˆåˆä¸€)")  
+                       (holiday-chinese 1 15  "å…ƒå®µèŠ‚ (æ­£æœˆåäº”)")  
+                       (holiday-chinese 5 5   "ç«¯åˆèŠ‚ (äº”æœˆåˆäº”)")  
+                       (holiday-chinese 9 9   "é‡é˜³èŠ‚ (ä¹æœˆåˆä¹)")  
+                       (holiday-chinese 8 15  "ä¸­ç§‹èŠ‚ (å…«æœˆåäº”)")  
+                       ;; ç”Ÿæ—¥  
+                       (holiday-fixed 2 28  "çˆ¸çˆ¸ç”Ÿæ—¥(1939)")  
+                       (holiday-fixed 3 8  "å¦ˆå¦ˆç”Ÿæ—¥(1953)")  
+                       (holiday-fixed 7 12  "å“¥å“¥ç”Ÿæ—¥(1975)")  
+                       (holiday-fixed 7 18  "çªçªç”Ÿæ—¥(2005)")  
+                       (holiday-fixed 7 18 "æˆ‘çš„ç”Ÿæ—¥(1977ï¼‰"))) 
 
 
 
 
-;; ÉèÖÃÖÜÒ»ÎªÃ¿ÖÜµÄ¿ªÊ¼
+;; è®¾ç½®å‘¨ä¸€ä¸ºæ¯å‘¨çš„å¼€å§‹
 (setq calendar-week-start-day 1) 
 
 
-;; apptÃ¿n·ÖÖÓ, ¼ì²éÒ»´Î
+;; apptæ¯nåˆ†é’Ÿ, æ£€æŸ¥ä¸€æ¬¡
 (setq appt-display-interval 1)
-;; apptÌáÊ¾ÏûÏ¢±£³ÖµÄÃëÊı
+;; apptæç¤ºæ¶ˆæ¯ä¿æŒçš„ç§’æ•°
 (setq appt-display-duration 30)
-;; appt Æğ×÷ÓÃÁË, ÑĞ¾¿ÏÂappt-±äÁ¿
-(appt-add "00:00" "ĞÂµÄÒ»Ìì, ×îºÃË¯¾õ")
-(appt-add " 7:00" "Æğ´²")
-(appt-add " 7:30" "Ôç·¹")
-(appt-add " 8:24" "Ñ§Ï°")
-(appt-add " 9:25" "ĞİÏ¢ÑÛ¾¦5·ÖÖÓ")
-(appt-add "11:30" "×öÎç·¹")
-(appt-add "12:00" "³ÔÎç·¹")
-(appt-add "12:30" "ĞİÏ¢ ")
-(appt-add "13:30" "¹¤×÷ ")
-(appt-add "18:50" "×öÍí·¹ ")
-(appt-add "19:30" "³ÔÍí·¹ ")
-(appt-add "20:30" "Ñ§Ï°")
-(appt-add "23:20" "Ë¢ÑÀ")
-(appt-add "23:50" "ÈÕ! »¹²»Ë¢ÑÀ?")
+;; appt èµ·ä½œç”¨äº†, ç ”ç©¶ä¸‹appt-å˜é‡
+;; (appt-add "00:00" "æ–°çš„ä¸€å¤©, æœ€å¥½ç¡è§‰")
+;; (appt-add " 7:00" "èµ·åºŠ")
+;; (appt-add " 7:30" "æ—©é¥­")
+;; (appt-add " 8:24" "å­¦ä¹ ")
+;; (appt-add " 9:25" "ä¼‘æ¯çœ¼ç›5åˆ†é’Ÿ")
+;; (appt-add "11:30" "åšåˆé¥­")
+;; (appt-add "12:00" "åƒåˆé¥­")
+;; (appt-add "12:30" "ä¼‘æ¯ ")
+;; (appt-add "13:30" "å·¥ä½œ ")
+;; (appt-add "18:50" "åšæ™šé¥­ ")
+;; (appt-add "19:30" "åƒæ™šé¥­ ")
+;; (appt-add "20:30" "å­¦ä¹ ")
+;; (appt-add "23:20" "åˆ·ç‰™")
+;; (appt-add "23:50" "æ—¥! è¿˜ä¸åˆ·ç‰™?")
 
-;; ÉèÖÃÒõÀúÏÔÊ¾£¬ÔÚ calendar ÉÏÓÃ pC ÏÔÊ¾ÒõÀú
+;; è®¾ç½®é˜´å†æ˜¾ç¤ºï¼Œåœ¨ calendar ä¸Šç”¨ pC æ˜¾ç¤ºé˜´å†
 (setq chinese-calendar-celestial-stem
-  ["¼×" "ÒÒ" "±û" "¶¡" "Îì" "¼º" "¸ı" "ĞÁ" "ÈÉ" "¹ï"])
+  ["ç”²" "ä¹™" "ä¸™" "ä¸" "æˆŠ" "å·±" "åºš" "è¾›" "å£¬" "ç™¸"])
 (setq chinese-calendar-terrestrial-branch
-  ["×Ó" "³ó" "Òú" "Ã®" "³½" "ËÈ" "Îì" "Î´" "Éê" "ÓÏ" "Ğç" "º¥"])
+  ["å­" "ä¸‘" "å¯…" "å¯" "è¾°" "å·³" "æˆŠ" "æœª" "ç”³" "é…‰" "æˆŒ" "äº¥"])
 
 
 
-;; ×Ô¶¯Ëõ½ø, Ã»ÓĞÆğ×÷ÓÃ
+;; è‡ªåŠ¨ç¼©è¿›, æ²¡æœ‰èµ·ä½œç”¨
 (setq adaptive-fill-regexp "[ \t]+\\|[ \t]*\\([0-9]+\\.\\|\\*+\\)[ \t]*")
 (setq adaptive-fill-first-line-regexp "\\  ")
-;; ÊäÈëÃÜÂëÊ±, ×ÜÊÇÒş²Ø
+;; è¾“å…¥å¯†ç æ—¶, æ€»æ˜¯éšè—
 (add-hook 'comint-output-filter-functions
-	  'comint-watch-for-password-prompt)
+          'comint-watch-for-password-prompt)
 
-;; ÍÂ³ö¼üĞòÁĞ
+;; åå‡ºé”®åºåˆ—
 (defun spell-key-seq (key)
   "spell key sequence and add it to kill ring"
   (interactive "kInput your key seq:")
@@ -311,27 +491,27 @@ charset
 
 
 
-;; c³ÌĞò
+;; cç¨‹åº
 (add-hook 'c-mode-hook 'linux-c-mode)
 ;; (add-hook 'c++-mode-hook 'linux-cpp-mode)
-;; ÉèÖÃimenuµÄÅÅĞò·½Ê½Îª°´Ãû³ÆÅÅĞò
+;; è®¾ç½®imenuçš„æ’åºæ–¹å¼ä¸ºæŒ‰åç§°æ’åº
 (setq imenu-sort-function 'imenu--sort-by-name)
 (defun linux-c-mode()
-;; ½«»Ø³µ´úÌæC-jµÄ¹¦ÄÜ£¬»»ĞĞµÄÍ¬Ê±¶ÔÆë
+  ;; å°†å›è½¦ä»£æ›¿C-jçš„åŠŸèƒ½ï¼Œæ¢è¡Œçš„åŒæ—¶å¯¹é½
   (define-key c-mode-map [return] 'newline-and-indent)
   (interactive)
-;; ÉèÖÃC³ÌĞòµÄ¶ÔÆë·ç¸ñ
+  ;; è®¾ç½®Cç¨‹åºçš„å¯¹é½é£æ ¼
   (c-set-style "K&R")
-;; ×Ô¶¯Ä£Ê½£¬ÔÚ´ËÖÖÄ£Ê½ÏÂµ±Äã¼üÈë{Ê±£¬»á×Ô¶¯¸ù¾İÄãÉèÖÃµÄ¶ÔÆë·ç¸ñ¶ÔÆë
+  ;; è‡ªåŠ¨æ¨¡å¼ï¼Œåœ¨æ­¤ç§æ¨¡å¼ä¸‹å½“ä½ é”®å…¥{æ—¶ï¼Œä¼šè‡ªåŠ¨æ ¹æ®ä½ è®¾ç½®çš„å¯¹é½é£æ ¼å¯¹é½
   (c-toggle-auto-state)
-;; ´ËÄ£Ê½ÏÂ£¬µ±°´BackspaceÊ±»áÉ¾³ı×î¶àµÄ¿Õ¸ñ
+  ;; æ­¤æ¨¡å¼ä¸‹ï¼Œå½“æŒ‰Backspaceæ—¶ä¼šåˆ é™¤æœ€å¤šçš„ç©ºæ ¼
   (c-toggle-hungry-state)
-;; TAB¼üµÄ¿í¶ÈÉèÖÃÎª8
+  ;; TABé”®çš„å®½åº¦è®¾ç½®ä¸º8
   (setq c-basic-offset 4)
-
-;; ÔÚ²Ëµ¥ÖĞ¼ÓÈëµ±Ç°BufferµÄº¯ÊıË÷Òı
+  
+  ;; åœ¨èœå•ä¸­åŠ å…¥å½“å‰Bufferçš„å‡½æ•°ç´¢å¼•
   (imenu-add-menubar-index)
-;; ÔÚ×´Ì¬ÌõÉÏÏÔÊ¾µ±Ç°¹â±êÔÚÄÄ¸öº¯ÊıÌåÄÚ²¿
+  ;; åœ¨çŠ¶æ€æ¡ä¸Šæ˜¾ç¤ºå½“å‰å…‰æ ‡åœ¨å“ªä¸ªå‡½æ•°ä½“å†…éƒ¨
   (which-function-mode) )
 (defun linux-cpp-mode()
   (define-key c++-mode-map [return] 'newline-and-indent)
@@ -344,34 +524,34 @@ charset
   (imenu-add-menubar-index)
   (which-function-mode) )
 
-;; TAGSÎÄ¼şËùÔÚÂ·¾¶
+;; TAGSæ–‡ä»¶æ‰€åœ¨è·¯å¾„
 (setq tags-file-name "/home/laub/job/src/rskit")
 
 
-;; ÎÒµÄĞÂº¯Êı, caseÓï¾äÔõÃ´Ğ´? ifÓï¾äÔõÃ´Ğ´?  
+;; æˆ‘çš„æ–°å‡½æ•°, caseè¯­å¥æ€ä¹ˆå†™? ifè¯­å¥æ€ä¹ˆå†™?  
 (defun set-diary-type (diary-type)
-"ÉèÖÃÈÕ¼ÇÀàĞÍ, Ä¿Ç°ÓĞ¸öÈË, ¹¤×÷, ¼¼ÊõµÈÈı¸öÀàĞÍ. ÒÔºó»¹¿ÉÒÔÔö¼ÓĞ¡ÌáÇÙ, 
-ÎÄÑ§, ÕÜÑ§µÈ, ºÙ.
+"è®¾ç½®æ—¥è®°ç±»å‹, ç›®å‰æœ‰ä¸ªäºº, å·¥ä½œ, æŠ€æœ¯ç­‰ä¸‰ä¸ªç±»å‹. ä»¥åè¿˜å¯ä»¥å¢åŠ å°æç´, 
+æ–‡å­¦, å“²å­¦ç­‰, å˜¿.
 
-Ïë·¨¾ÍÊÇ, Í¨¹ı´Ëº¯Êı, ÉèÖÃÈÕ¼ÇÀàĞÍ(Ò²¾ÍÊÇÈÕ¼ÇÎÄ¼ş), È»ºó, ÔÚÈÕÀúÖĞ, ´ò
-¿ªµÄ¾ÍÊÇ¸ÕÉèÖÃ¹ıµÄÈÕ¼Ç, ÕâÑù¿ÉÒÔ·ÖÀàÔÚÃ¿Ìì¼ÇÏÂ¶«Î÷.  
+æƒ³æ³•å°±æ˜¯, é€šè¿‡æ­¤å‡½æ•°, è®¾ç½®æ—¥è®°ç±»å‹(ä¹Ÿå°±æ˜¯æ—¥è®°æ–‡ä»¶), ç„¶å, åœ¨æ—¥å†ä¸­, æ‰“
+å¼€çš„å°±æ˜¯åˆšè®¾ç½®è¿‡çš„æ—¥è®°, è¿™æ ·å¯ä»¥åˆ†ç±»åœ¨æ¯å¤©è®°ä¸‹ä¸œè¥¿.  
 
-Î´À´¿ÉÒÔ¿¼ÂÇ, °ÑÕâ¼¸¸öÈÕ¼ÇÎÄ¼şºÏÔÚÒ»¸öÎÄ¼şÖĞ, ÏótodoÖĞµÄ, Í¨¹ıCategory 
-±ê¼Ç, ÔÚÍ¬Ò»ÎÄ¼şÖĞ¼ÇÂ¼Èô¸É¸öÀàĞÍ.  
+æœªæ¥å¯ä»¥è€ƒè™‘, æŠŠè¿™å‡ ä¸ªæ—¥è®°æ–‡ä»¶åˆåœ¨ä¸€ä¸ªæ–‡ä»¶ä¸­, è±¡todoä¸­çš„, é€šè¿‡Category 
+æ ‡è®°, åœ¨åŒä¸€æ–‡ä»¶ä¸­è®°å½•è‹¥å¹²ä¸ªç±»å‹.  
 
--¿×Òã£¬±±¾© 2006Äê11ÔÂ05ÈÕ ĞÇÆÚÈÕ 22Ê±43·Ö04Ãë"
+-å­”æ¯…ï¼ŒåŒ—äº¬ 2006å¹´11æœˆ05æ—¥ æ˜ŸæœŸæ—¥ 22æ—¶43åˆ†04ç§’"
 
-  (interactive "sÇëÑ¡ÔñÄúÒª×°ÅäµÄÈÕ¼ÇÀàĞÍ (d-¸öÈË, w-¹¤×÷, t-¼¼Êõ):") ;;  ²»ÖªÎªºÎ, ¾äÊ×Òª¼Ó"k",
-                                                                      ;;  ·ñÔò´®»áÂÒµô
+  (interactive "sè¯·é€‰æ‹©æ‚¨è¦è£…é…çš„æ—¥è®°ç±»å‹ (d-ä¸ªäºº, w-å·¥ä½œ, t-æŠ€æœ¯):") ;;  ä¸çŸ¥ä¸ºä½•, å¥é¦–è¦åŠ "k",
+                                                                      ;;  å¦åˆ™ä¸²ä¼šä¹±æ‰
   (format "%s" 'diary-type)
   (if  (string-equal diary-type "D") 
-      (message "ÄãÑ¡ÔñÁË `%s' ÀàĞÍ" diary-type)) )
+      (message "ä½ é€‰æ‹©äº† `%s' ç±»å‹" diary-type)) )
 
 (put 'narrow-to-region 'disabled nil)
 
 
 
-;; ºöÂÔ¸÷ÖÖÒşº¬ÎÄ¼şµÈµÈ
+;; å¿½ç•¥å„ç§éšå«æ–‡ä»¶ç­‰ç­‰
 (setq dired-backup-overwrite 'always)
 (setq dired-listing-switches "-Aol")
 (setq dired-omit-files-p t)
@@ -393,7 +573,7 @@ charset
   )
 ;;(add-hook 'dired-load-hook 'dired-load-dired-x)
 
-;; ÈÃ²»Í¬ÀàĞÍÎÄ¼şÏÈµÄÑÕÉ«²»Í¬£¬ÀàËÆÓÚls --color µÄĞ§¹û
+;; è®©ä¸åŒç±»å‹æ–‡ä»¶å…ˆçš„é¢œè‰²ä¸åŒï¼Œç±»ä¼¼äºls --color çš„æ•ˆæœ
 (add-hook 'dired-mode-hook
       (lambda ()
           (font-lock-add-keywords
@@ -409,19 +589,19 @@ charset
                                  '(".+" (dired-move-to-filename) nil (0 font-lock-type-face))))))))
 
 
-;; Ó¢ºº´Êµä
+;; è‹±æ±‰è¯å…¸
 (defun my-sdcv ()
    (interactive)
    (message (shell-command-to-string (concat "sdcv " (current-word)))))
 (global-set-key  "\C-c\C-d" 'my-sdcv)
 
 
-;; pluskidµÄ sdcv-mode
+;; pluskidçš„ sdcv-mode
 ;; author: pluskid
-;; µ÷ÓÃ stardict µÄÃüÁîĞĞ³ÌĞò sdcv À´²é´Çµä
-;; Èç¹ûÑ¡ÖĞÁË region ¾Í²éÑ¯ region µÄÄÚÈİ£¬·ñÔò²éÑ¯µ±Ç°¹â±êËùÔÚµÄµ¥´Ê
-;; ²éÑ¯½á¹ûÔÚÒ»¸ö½Ğ×ö *sdcv* µÄ buffer ÀïÃæÏÔÊ¾³öÀ´£¬ÔÚÕâ¸ö buffer ÀïÃæ
-;; °´ q ¿ÉÒÔ°ÑÕâ¸ö buffer ·Åµ½ buffer ÁĞ±íÄ©Î²£¬°´ d ¿ÉÒÔ²éÑ¯µ¥´Ê
+;; è°ƒç”¨ stardict çš„å‘½ä»¤è¡Œç¨‹åº sdcv æ¥æŸ¥è¾å…¸
+;; å¦‚æœé€‰ä¸­äº† region å°±æŸ¥è¯¢ region çš„å†…å®¹ï¼Œå¦åˆ™æŸ¥è¯¢å½“å‰å…‰æ ‡æ‰€åœ¨çš„å•è¯
+;; æŸ¥è¯¢ç»“æœåœ¨ä¸€ä¸ªå«åš *sdcv* çš„ buffer é‡Œé¢æ˜¾ç¤ºå‡ºæ¥ï¼Œåœ¨è¿™ä¸ª buffer é‡Œé¢
+;; æŒ‰ q å¯ä»¥æŠŠè¿™ä¸ª buffer æ”¾åˆ° buffer åˆ—è¡¨æœ«å°¾ï¼ŒæŒ‰ d å¯ä»¥æŸ¥è¯¢å•è¯
 (global-set-key (kbd "C-c d") 'kid-sdcv-to-buffer)
 (defun kid-sdcv-to-buffer ()
   (interactive)
@@ -456,13 +636,13 @@ charset
 
 
 
-;; mew ×÷ÎªÓÊ¼ş¿Í»§¶Ë£¬Ò»ÈçËùÓĞµÄ emacs µÄ²å¼ş£¬Ç¿´óºÍÎŞÇîµÄ¶¨ÖÆĞÔ¡£
-;; ¿ÉÒÔ×Ô¸ø×Ô×ã£¬²»ÒÀÀµÓÚ MTA ºÍ MDA£¬Òò´Ë mutt µÄ¿çÆ½Ì¨ÒªºÃµÄ¶à£¬¿ÉÒÔÔÚ windows ÉÏÊ¹ÓÃ¡£
-;; Ç¿´óµÄ¹ıÂËÆ÷¶¨ÖÆ£¬ÔÚ mew ÖĞ³ÆÎª refile¡£¶øÇÒ mew ×Ô¶¯ refile »¹ÊÇ±È½Ï×¼È·ºÍÈËĞÔ»¯µÄ¡£
-;; mew ÎªÀ´×ÔÈÕ±¾µÄ×÷Æ·¡£Òò´ËÏà±È gnus ¶Ô cjk µÄÖ§³ÖÒªÍêÉÆ¡£
-;; mew ÄÚ½¨µÄ·á¸»Ä£Ê½£¬Ò»¹²ÁùÖÖ£¬ÓĞ summary, virtual meaaage, draft, header, edit, addrbook mode¡£
-;; mew µÄÅäÉ«Ïà±È gnus ÊµÔÚÊÇ·Ç³£µÄÊæ·ş£¬Ò²ÊÇ×î³õÎüÒı×Ô¼ºµÄÔ­Òò¡£
-;; mew ÄÚ½¨µÄÎŞ´¦²»ÔÚµÄÇ¿´óµÄ²¹È«»úÖÆ£¬Ê¹µÃ×«Ğ´´¦ÀíÔÄ¶ÁÓÊ¼şºÜ±ã½İ¡£
+;; mew ä½œä¸ºé‚®ä»¶å®¢æˆ·ç«¯ï¼Œä¸€å¦‚æ‰€æœ‰çš„ emacs çš„æ’ä»¶ï¼Œå¼ºå¤§å’Œæ— ç©·çš„å®šåˆ¶æ€§ã€‚
+;; å¯ä»¥è‡ªç»™è‡ªè¶³ï¼Œä¸ä¾èµ–äº MTA å’Œ MDAï¼Œå› æ­¤ mutt çš„è·¨å¹³å°è¦å¥½çš„å¤šï¼Œå¯ä»¥åœ¨ windows ä¸Šä½¿ç”¨ã€‚
+;; å¼ºå¤§çš„è¿‡æ»¤å™¨å®šåˆ¶ï¼Œåœ¨ mew ä¸­ç§°ä¸º refileã€‚è€Œä¸” mew è‡ªåŠ¨ refile è¿˜æ˜¯æ¯”è¾ƒå‡†ç¡®å’Œäººæ€§åŒ–çš„ã€‚
+;; mew ä¸ºæ¥è‡ªæ—¥æœ¬çš„ä½œå“ã€‚å› æ­¤ç›¸æ¯” gnus å¯¹ cjk çš„æ”¯æŒè¦å®Œå–„ã€‚
+;; mew å†…å»ºçš„ä¸°å¯Œæ¨¡å¼ï¼Œä¸€å…±å…­ç§ï¼Œæœ‰ summary, virtual meaaage, draft, header, edit, addrbook modeã€‚
+;; mew çš„é…è‰²ç›¸æ¯” gnus å®åœ¨æ˜¯éå¸¸çš„èˆ’æœï¼Œä¹Ÿæ˜¯æœ€åˆå¸å¼•è‡ªå·±çš„åŸå› ã€‚
+;; mew å†…å»ºçš„æ— å¤„ä¸åœ¨çš„å¼ºå¤§çš„è¡¥å…¨æœºåˆ¶ï¼Œä½¿å¾—æ’°å†™å¤„ç†é˜…è¯»é‚®ä»¶å¾ˆä¾¿æ·ã€‚
 
 (autoload 'mew "mew" nil t)
 (autoload 'mew-send "mew" nil t)
@@ -482,6 +662,5 @@ charset
       'mew-draft-send-message
       'mew-draft-kill
       'mew-send-hook))
-
 
 

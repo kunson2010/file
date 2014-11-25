@@ -1,0 +1,16 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(
+ ("emacs配置文件"
+  ((filename . "/home/laub/.emacs")
+   (front-context-string . ";; M-C-z 绑定为倒翻下一")
+   (rear-context-string . "atively 10000)\n\n")
+   (position . 1505)))
+("do"
+  ((filename . "/home/laub/emacs/todo/do")
+   (front-context-string . "*/* 2006-01-09 1")
+   (rear-context-string)
+   (position . 4054)))
+)

@@ -1,0 +1,86 @@
+
+Nov 6, 2006 
+  
+  水平window分割, 宽窄调整: `C-x {'和`C-x}'
+  
+  Emacs注释命令
+  
+  `M-;'
+     Insert or realign comment on current line; alternatively, comment
+     or uncomment the region (`comment-dwim').
+  
+  `C-u M-;'
+     Kill comment on current line (`comment-kill').
+  
+  `C-x ;'
+     Set comment column (`comment-set-column').
+  
+  `C-M-j'
+     Like <RET> followed by inserting and aligning a comment
+     (`comment-indent-new-line').
+  
+  `M-x comment-region'
+     Add or remove comment delimiters on all the lines in the region.
+
+Nov 5, 2006 
+  
+  find -name "*.[chCH]" -print | etags - #当前目录查找所有的.h和.cpp文件,并提取出TAGS
+  或者
+  find -name "*.h" -exec etags -a {} \;
+  
+  然后在.emacs加入
+  (setq tags-file-name "~/The/Tags/File/Path/TAGS")
+  M-.      查找
+  C-u M-.  查找下一个
+  M-*      回到上一次运行M-. 前的光标位置
+  M-Tab    自动补齐函数名
+
+  
+  服务器双机热备, 数据上磁带, 没有需求.
+
+Nov 7, 2006 
+  
+  c代码的折叠, 弄一下
+  
+  "%[^=]=%[^\n]\n" 体会该正则表达式的意思.  
+  
+
+Nov 8, 2006 
+  
+  对已经有的书签改名字.  
+
+Nov 9, 2006 
+  
+  物理:关于同时性的思考.
+  
+  两条狗, 面对面, 嘴巴对嘴巴, 一起张嘴, 一起闭嘴, 一秒钟张开, 一秒钟闭上... 整个过程中上嘴
+  唇挨对方上嘴唇, 下嘴唇挨对方下嘴唇, 如此张闭不停, 频率不变. 对每条狗来说, 他知道, 自己张
+  开嘴时, 对方也"同时"张开嘴.
+  
+  现在, 两只狗, 面对面彼此后退离开, 他们视力无限好, 永远都能彼此看清对方的嘴巴, 张嘴的频率
+  和在一起时一样, 不变.
+  
+  问: 在他们相互离开的过程中, 一只狗会在自己张开嘴巴时, 看到对方正好闭上嘴么?
+  
+  C-v ~ 1.2 <RET> 显示1.2版本的代码
+  
+  Emacs的picture-mode完成后， 要把所有的没有字符的空间全部换成空格。用什么命令？(tab键可能
+  占了1~8个空格位置， 所以不能简单的M-x query-replace ^I -------- <RET>)
+Nov 10, 2006 
+  
+  对C本身的熟悉
+  对系统调用的熟悉
+  
+  C-c 6 r 改变buffer名字
+  
+  开发时, 技术革新最小化, 用自己最熟悉的办法解决问题, 免得引起问题.  
+
+Nov 24, 2006 
+  
+  递归查证的功能. 我在查找中要一边编辑,一边查找.  
+
+Dec 25, 2006 
+  
+  无线上网卡拨号, 拨通了以后, 有时会出现不能解析主机. 可以在cmd中用命
+  令route print, 如果在第一行看到了 0.0.0.0, 用命令route delete
+  0.0.0.0, 然后route print看看, 然后再次拨号.  

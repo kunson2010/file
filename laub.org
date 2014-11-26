@@ -137,8 +137,9 @@
 
   
   
-* TODO 下次研究室seminar[%]
-About next seminar
+* 研究室seminar
+ 
+** TODO lab seminar
 
 Date : 12/3(Wed) 15:10~
 Location : Our Lab
@@ -148,6 +149,21 @@ Speaker : Suzuki, Hatano
    :ID:       bde62ddd-f5ba-451b-b187-2f7a94bcae43
    :END:
 
+** TODO music seminar: Kodama
+   SCHEDULED: <2014-12-04 四 15:10>
+   :PROPERTIES:
+   :ID:       3d34b3bb-dd43-4972-b11a-7ac6f7521cf7
+   :END:
+** TODO music seminar: KohKi
+   SCHEDULED: <2014-12-11 四 15:00>
+   :PROPERTIES:
+   :ID:       5cf40f91-c907-4a9d-b2cd-f803a128054f
+   :END:
+
+*** TODO 看书<Melodic Similarity>
+    :PROPERTIES:
+    :ID:       cc99ac67-a103-44ec-9b42-275f70b0a874
+    :END:
 
 
 * 网络书签
@@ -437,6 +453,23 @@ file:/home/laub/org/laub.org.jpeg
    CLOSED: [2014-11-25 二 11:11]
    - State "DONE"     from "TODO"           [2014-11-25 二 11:11]
    file:/绝对路径/xxx.jpg
+
+** 修改org-agenda用中文
+在ERC,emacs的聊天记录：
+<laub> Cloud we change the org-agenda more display the date in Chinese?
+<laub> sorry, "org-agenda mode"
+<laub> not "org-agenda more"  [18:37]
+<Fuco> probably no, because org uses regexps to parse the dates
+<Fuco> but you sure can install a post-render hook and apply 'display on them
+<laub> great! Thank you so much! :)  [18:38]
+ *** cluricst (~cst@unaffiliated/cluricst) has joined channel #emacs
+ *** cluricst (~cst@unaffiliated/cluricst) has quit: Client Quit
+<Fuco> not sure if you should thank me :D When you start messing with text
+       properties...
+
+
+
+
 * TODO Emacs修改
   :PROPERTIES:
   :ID:       309ff2cc-4f06-429e-bb2f-87d421a8578e
@@ -494,3 +527,4 @@ Sett
  Fred
 * No title
 [2014-11-26 周三 03:41]
+

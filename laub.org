@@ -18,7 +18,7 @@
    :PROPERTIES:
    :ID:       1e4d2bc7-f318-446b-b4ff-27d4a3767749
    :END:
-*** TODO 向老师演示 pitch distance 的比较[0%]
+*** TODO 向东条老爷演示 pitch distance 的比较[0%]
     DEADLINE: <2014-11-21 五>
     :PROPERTIES:
     :ID:       10cb2a94-c3b2-47ed-8fd0-8a37ae5c7b0d
@@ -359,8 +359,9 @@ iOS的VIM已经安装了，不过ESC键和语法高亮还要配置一下。gcc�
 变成真的。
 
 
-* 未来的输入输出							 :灵感:
-  DEADLINE: <2014-11-25 二> SCHEDULED: <2014-11-25 二 03:00>
+* DONE 未来的输入输出							 :灵感:
+  CLOSED: [2014-11-27 四 15:00] DEADLINE: <2014-11-25 二> SCHEDULED: <2014-11-25 二 03:00>
+  - State "DONE"       from ""           [2014-11-27 四 15:00]
   :PROPERTIES:
   :ID:       7b7a343d-b3ed-4796-b73c-6aade64014c2
   :END:
@@ -498,33 +499,12 @@ iOS降级到4.3.3
 
    
 
-* 手机mobileOrg试玩
-[2014-11-26 周三 01:58]
-** 二级目录 
-我怎么加入时间段？
 
-没有时间段，只有一个静态时间戳。
+* 德国的马琳妹子来信息说要嫁人了
+** 给她我的日本地址
+〒９２３ー１２０５
+日本石川県能美市宮竹町カ５９ー１、あぶにーる　２０３、孔毅
 
-那么，怎么增加三级目录？三个星号是没用的，同步到pc之后，星号前面会自动
-加空格，必须在emacs中手动维护编辑，再下推，才在手机有效。
-
-*** 估计不会生效
-
-* DONE 再试一次大纲
-  CLOSED: [2014-11-26 三 03:41]
-  - State "DONE"       from ""           [2014-11-26 三 03:41]
-[2014-11-26 周三 03:32]
-** DONE buzhidao nizenmeshuo
-   CLOSED: [2014-11-26 三 03:43]
-   - State "DONE"       from ""           [2014-11-26 三 03:43]
-+
-Add sff gagged afffdddg
-
-*** DONE fddf
-    CLOSED: [2014-11-26 三 03:41]
- Fddf
-Sett
- Fred
-* No title
-[2014-11-26 周三 03:41]
-
+PostCode:923-1205
+Japan, Ishikawa-ken, Nomi-shi, Miyatakemachi, Ka 59-1, D’avenir room
+203, Koh Ki

@@ -1,3 +1,44 @@
+;; 企图在org-agenda中显示中文日期
+(add-to-list 'load-path "~/.emacs.d/")
+(require 'cal-china-x)
+
+(defalias 'org-agenda-format-date-aligned 'lawlist-org-agenda-format-date-aligned)
+
+(defun lawlist-org-agenda-format-date-aligned (date)
+  "Format a date string for display in the daily/weekly agenda, or timeline.
+   This function makes sure that dates are aligned for easy reading."
+  (require 'cal-iso)
+  (print date)
+  (let* ((dayname (calendar-day-name date))
+	 (day (cadr date))
+	 (day-of-week (calendar-day-of-week date))
+	 (month (car date))
+	 (monthname (calendar-month-name month))
+	 (year (nth 2 date))
+	 (iso-week (org-days-to-iso-week
+		    (calendar-absolute-from-gregorian date)))
+	 (weekyear (cond ((and (= month 1) (>= iso-week 52))
+			  (1- year))
+			 ((and (= month 12) (<= iso-week 1))
+			  (1+ year))
+			 (t year)))
+	 (weekstring (if (= day-of-week 1)
+			 (format " W%02d" iso-week)
+		       "")))
+    (format "%s" (calendar-date-string date))))
+
+
+;;时间日期格式 
+(setq display-time-format "%c")
+;; 设置时间格式
+(setq format-time-string "%c")
+
+(setq-default org-display-custom-times t)
+(setq org-time-stamp-custom-formats '("<%Y-%m-%d %A>" . "<%Y-%m-%d %A %H:%M>"))
+
+
+
+
 ;; MobileOrg
 (setq org-directory "~/org")
 ;; Set to the name of the file where new notes will be stored
@@ -78,12 +119,6 @@
 ;; org 中使用日历
 (setq org-agenda-include-diary t)
 
-;;时间日期格式 
-(setq display-time-format "%c")
-;; 设置时间格式
-(setq format-time-string "%c")
-
-;; (setq org-display-custom-times t)    ;使org的时间戳默认变成中文格式，但是没起作用
 
 
 ;; org中时间戳的格式，中文格式，放开了报错，所以直接改了org.el

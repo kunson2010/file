@@ -6,6 +6,34 @@
 ##+TODO:  将要做(t) 等待中(w@/!) | 已完成(d!) 已取消(c@)
 #+TODO:  TODO(t) WAIT(w@/!) | DONE(d!) CANCLE(c@)
 
+* 研究室seminar
+ 
+** TODO lab seminar
+
+Date : 12/3(Wed) 15:10~
+Location : Our Lab
+Speaker : Suzuki, Hatano
+   SCHEDULED: <2014-12-03 三 15:10> 
+   :PROPERTIES:
+   :ID:       bde62ddd-f5ba-451b-b187-2f7a94bcae43
+   :END:
+
+** TODO music seminar: Kodama
+   SCHEDULED: <2014-12-04 四 15:10>
+   :PROPERTIES:
+   :ID:       3d34b3bb-dd43-4972-b11a-7ac6f7521cf7
+   :END:
+** TODO music seminar: KohKi
+   SCHEDULED: <2014-12-11 四 15:00>
+   :PROPERTIES:
+   :ID:       5cf40f91-c907-4a9d-b2cd-f803a128054f
+   :END:
+
+*** TODO 看书<Melodic Similarity>
+    :PROPERTIES:
+    :ID:       cc99ac67-a103-44ec-9b42-275f70b0a874
+    :END:
+
  
 * WAIT 2015年较好的状态[0%]
   - State "TODO"     from "WAIT"     [2014-11-25 二 22:55]
@@ -122,101 +150,7 @@
     :END:
 
     
-| Name                 |         Phone |      Age |
-|----------------------+---------------+----------|
-| Koh Ki               | 080-4255-5698 |       37 |
-|----------------------+---------------+----------|
-| Kong Ling Kung       |   13612961602 |       33 |
-|----------------------+---------------+----------|
-| Ling Xi              | 0123412341234 |       34 |
-|----------------------+---------------+----------|
-| asdfasdfasdfasdfaasf |               |          |
-| asdfas;dlfkjasd;lfkj |      asdfasdf | asdfasdf |
-|----------------------+---------------+----------|
 
-
-  
-  
-* 研究室seminar
- 
-** TODO lab seminar
-
-Date : 12/3(Wed) 15:10~
-Location : Our Lab
-Speaker : Suzuki, Hatano
-   SCHEDULED: <2014-12-03 三 15:10> 
-   :PROPERTIES:
-   :ID:       bde62ddd-f5ba-451b-b187-2f7a94bcae43
-   :END:
-
-** TODO music seminar: Kodama
-   SCHEDULED: <2014-12-04 四 15:10>
-   :PROPERTIES:
-   :ID:       3d34b3bb-dd43-4972-b11a-7ac6f7521cf7
-   :END:
-** TODO music seminar: KohKi
-   SCHEDULED: <2014-12-11 四 15:00>
-   :PROPERTIES:
-   :ID:       5cf40f91-c907-4a9d-b2cd-f803a128054f
-   :END:
-
-*** TODO 看书<Melodic Similarity>
-    :PROPERTIES:
-    :ID:       cc99ac67-a103-44ec-9b42-275f70b0a874
-    :END:
-
-
-* 网络书签
-** JAIST LIFE
-[[https://web-mail2013.jaist.ac.jp/?client%3Dadvanced&loginOp%3Dlogout][JAIST邮箱]]
-
-[[http://translate.google.cn/#en/zh-CN/][google翻译]]
-
-[[http://w.qq.com/][web QQ]]
-
-** Emacs
-[[http://orgmode.org/manual/index.html#Top][org手册, 英文，权威]]
-
-[[http://doc.norang.ca/org-mode.html#HowToUseThisDocument][org mode, 用纯文本中组织你的生活, 英文]]
-
-[[http://forum.ubuntu.org.cn/viewtopic.php?f%3D68&t%3D395158][Emacs Org Mode 小节， 长文慎入]]
-
-[[http://www.cnblogs.com/Open_Source/archive/2011/07/17/2108747.html#sec-1-3][Org-mode 简明手册]]
-
-[[http://floss.zoomquiet.io/data/20120301101333/index.html][org-mode, agenda view的使用]]
-
-[[http://darksun.blog.51cto.com/3874064/970737][org-mode进行时间管理(2)]]
-
-[[http://www.cnblogs.com/holbrook/archive/2012/04/12/2444992.html][org-mode，最好的文档编辑利器]]
-
-[[http://darksun.blog.51cto.com/3874064/1302920][mobilOrg, 手机端的org神器]]
-
-[[https://ioctocat.com/][github的iOS客户端，尝试和电脑同步org文件]]
-
-[[http://emacser.com/weibo.htm][Emacs中文网，比较新奇的东西都能找到，比如聊天eri，甚至微博]]
-
-[[http://lifegoo.pluskid.org/wiki/EmacsAsFileManger.html][Emacs 文件管理器]]
-
-
-** 代码排版导出测试
-   SCHEDULED: [2014-11-20 四 04:00-03:]
-
-| asdfasdf |                             | asdf | sdfasdf | asdf | B |
-|----------+-----------------------------+------+---------+------+---|
-|          | <2014-11-20 四>             | asdf |         |      |   |
-|----------+-----------------------------+------+---------+------+---|
-|          | [2014-11-20 四 04:00-05:00] |      |         |      |   |
-|----------+-----------------------------+------+---------+------+---|
-|          |                             |      |         |      |   |
-|          |                             |      |         |      |   |
-|          |                             |      |         |      |   |
-|          |                             |      |         |      |   |
-
-
-
-
-
-   
 * DONE org-mode 手机
   CLOSED: [2014-11-26 三 01:44]
   - State "DONE"       from "TODO"       [2014-11-26 三 01:44]
@@ -262,7 +196,9 @@ push,pull，和在iPhone端的同步操作。
 
 
    
-* TODO 手机github端的使用
+* DONE 手机github端的使用
+  CLOSED: [2014-12-02 二 15:09]
+  - State "DONE"       from "TODO"       [2014-12-02 二 15:09]
   :PROPERTIES:
   :ID:       571b7480-03fe-48f5-aea4-b19c4f3d0e1d
   :END:
@@ -274,15 +210,14 @@ push,pull，和在iPhone端的同步操作。
    CLOSED: [2014-11-21 五 12:13]
    - State "DONE"     from "TODO"     [2014-11-21 五 12:13]
 好像手机上只能读服务器文件。
-** TODO iOctoCat手机电脑的同步联动
+** DONE iOctoCat手机电脑的同步联动
+   CLOSED: [2014-12-02 二 15:09]
+   - State "DONE"       from "TODO"       [2014-12-02 二 15:09]
    :PROPERTIES:
    :ID:       eba16b52-1bbc-4047-a068-3fd3d0c44f9c
    :END:
 
 
-
-org-display-custom-times is a variable defined in `org.el'.
-Its value is t
 
 
 * WAIT ubuntu中的CTEX安装
@@ -315,18 +250,6 @@ Its value is t
 * Linux的命令行工具
 
 [[http://lcan.info/2011/03/cli-software/][CLI神器]]
-
-
-* Linux中的仙剑DOS版
-
-[[http://hi.baidu.com/qileilu/item/98177e770e2b2d3e70442313][linux仙剑]]
-
-[[http://pan.baidu.com/share/link?shareid%3D268651&uk%3D939986085][linux仙剑安装版下载]]
-
-[[http://tieba.baidu.com/p/1082803228][主要攻略]]
-[[http://pal.17173.com/pal1/map/pal1map.shtml][dos仙剑部分详细地图]]
-
-[[http://www.xianjian5.com/uploads/allimg/090630/1195520N56-32.jpg][蛤蟆洞]]
 
 
 * Phone上面玩不成Emacs。
@@ -380,9 +303,6 @@ iOS的VIM已经安装了，不过ESC键和语法高亮还要配置一下。gcc�
 
 瞳孔看见的。所以挂在眼前把瞳孔喂饱了就行了。看手机也是有问题的，要低头
 对准屏幕，要用手举着手机，都是非人体工学的。
-
-file:/home/laub/download/google_glass.jpg
-
 
 
 # 加入相对路径，就不能直接看见。我日
@@ -445,10 +365,14 @@ EOS3眼控对焦需改进的方面：
 
 * org-mode
 ** 输出脑图
+[[http://linusp.github.io/2014/01/06/freemind-with-org-mode.html][使用ox-freemind将org-mode文档导出为思维导图（脑图）]]
+
+执行:
+m-x org-freemind-export-to-freemind 
+
+
 安装了freemind，导出为jpg，如下。
-
-file:/home/laub/org/laub.org.jpeg
-
+[[file:laub.org.jpeg][本文脑图, 2014-12-03]]
 
 ** DONE 插入文件
    CLOSED: [2014-11-25 二 11:11]
@@ -468,8 +392,9 @@ file:/home/laub/org/laub.org.jpeg
 <Fuco> not sure if you should thank me :D When you start messing with text
        properties...
 
+*** 留神儿的解决方案
 
-
+    
 
 * TODO Emacs修改
   :PROPERTIES:
@@ -490,6 +415,7 @@ iOS降级到4.3.3
 
 没有备份shsh，试验小伞 TinyUnbrellar
 
+
 * 系统维护
 
 [[http://forum.ubuntu.org.cn/viewtopic.php?f%3D120&t%3D18334][IRC使用]]
@@ -508,3 +434,125 @@ iOS降级到4.3.3
 PostCode:923-1205
 Japan, Ishikawa-ken, Nomi-shi, Miyatakemachi, Ka 59-1, D’avenir room
 203, Koh Ki
+
+
+* 杜普雷
+杰奎琳·玛丽·杜·普蕾，1945年出生与英国中产阶级家庭，良好的教育5岁开始拉
+大提琴，很快成为了世界级的大提琴家。1967年22岁的她与贝伦鲍依姆结婚。这
+是俩人排练的录像。[[https://www.youtube.com/watch?v%3DfQpQki2PjOY][杜普雷和贝排练]]
+
+但是，从1971年七月开始，她开始受到一种奇怪病魔的骚扰，手指开始会偶尔失
+去知觉，演出开始受到影响。后来她的病被诊断为多发性硬化症（Multiple
+sclerosis），经历了一系列的病痛反复发作之后，她只好在1973年28岁时退出乐
+坛。她试图教授音乐，但是最终因为病症加重，于1987年十月病逝于伦敦家中。
+
+杜普蕾的病痛生活中，只剩下医师、护士和几个老朋友......贝伦鲍依姆因先是
+每隔一段时间来探望她，一直持续到他在巴黎另组一个家庭之后，有了新家，回
+来的机会就更少了...只留下她一个人慢慢孤独的死去。
+
+我的看法是陪着一个半僵硬的女人确实很痛苦，但是在她完全死亡之前她对痛苦
+的感受和常人是一样的，而且她的痛苦更深。一是不能演奏，不能摸琴，甚至不
+能教琴，这对一个拉琴的音乐家来说是直接对精神世界的粉碎性打击；其二是丈
+夫的远离和接受丈夫另外结婚也就是自己被抛弃的事实，而且也要说服自己接受
+被抛弃，她自己作为个人的能动性已经完全丧失一点也不能起作用，想争回自己
+的爱人都站不起来。
+
+我对贝伦鲍依姆的看法是：在这个艰难的局面上，他作为一个丈夫没有表现出男
+人的坚强，没有咬牙扛住这个局面；相反只是表现出了犹太人的商人的算计的性
+质，自个儿闪人了，说白了就是对她最后这漫长弥留人生的这一大片痛苦，就这
+么不管了，丢开了自己开始新生活。这个不是抛弃是什么？婚姻本来就是承诺，
+彼此作对方的基石。遇事儿就跑了那和不要钱的嫖娼的区别是什么。我这么说是
+揭露这里面男人的问题。和女人无关，她是可惜了。所以，贝就是背叛了爱情。
+
+杜普雷为了和他结婚，放弃自己的基督信仰信了犹太教，最后瘫痪时候，却从丈
+夫这里连安慰也没有得到，反而只有多重的伤痛。估计贝在二婚前最后一次去看
+她然后离开的时候，她一定很心碎吧。妈的这种事情让一个健康的男人来承受都
+是抓心抓肺，更何况她只是个女人，还是个半瘫痪的病人。到后来，她连想哭都
+不能哭了，因为肌肉萎缩而且不受控制。
+
+4岁摸琴，16岁登台迅速成名，22岁结婚，26岁发病，28岁退出演奏，孤独病痛中
+14年（其间无言地经历和接受：老公叛逃，老公婚外情，老公不要她了，老公另
+外再结婚，而自己病情却越来越严重直到不能吞咽，无法哭），42岁离开人世。
+
+在这个极端问题上，我赞同日本电视剧《白色巨塔》中里见医生的独白：“人都
+是要死的。对于一个挽救不回来的晚期癌症病人，一种死法是不明不白的痛苦绝
+望死去；一种是通过医生，家庭的帮助，调整好心态，有一个良好的过渡，然后
+平稳的死去。这两种死法对病人来说是完全不同的。作为医生，就应该站在病人
+的立场上帮助他，鼓励他，让他不恐惧，获得内心的平静去面对死亡”。
+
+而在杜普雷的最后那14年病痛生活中，让她不恐惧，鼓励她，给她力量的人，最
+应该的就是她丈夫贝伦鲍依姆，可是这家伙却跑路了。这是这哥们儿的公开行为，
+没有什么可原谅的，没什么可商量的。艺术上成功又怎么样，渣渣就是渣渣。自
+己缺少点儿人格魅力，就别怪有人出言语。历史上大音乐家抛弃妻子的还真不多
+见，最不济的多是自己活得惨被人抛弃那种。即便有抛弃行为，对方也还是一个
+健康的完人，可以开始新的生活，即便憔悴，也和杜普雷的情形没有可比性。
+
+这次看到这个新年音乐会的握手作秀，算是对其内在的垃圾品格的再次确认。
+
+杜普雷打动人的是她音乐与人性中天然的纯真，就这一点天性而言，她和贝就不
+是同一路人。一个20岁的蹦蹦跳跳的女孩子，同时也是世界级的年轻大师，一颗
+跳动的心里只长满了爱和音乐，哪里懂回到世俗去判别男人呢。呵呵。应了中国
+一句老话：门当户对才能嫁啊。
+
+不过也好，至少她在这世界上留下了一个纯洁女人的真实故事和用生命浇灌的音
+乐，这些就够大家流传下去了。作为音乐家，她和其他大师一样永生着，作为女
+人，她给出了一个纯洁可爱的女人的鲜活的例子。
+
+音乐界拍了一部纪录片《怀念杜普雷》，她还健康时候和她同台的梅塔、帕尔曼、
+祖客曼包括贝现在都是国际一线大师或者泰斗了。我觉得这些片子里面的人在说
+道杜普雷的时候，还是镜头前的表演居多，尤其是贝。因为她最后的岁月，他们
+在生动的艺术社交生活中运动，而不是和困在病榻的杜普雷一起过的。什么是爱，
+不要搞复杂了，就是心甘情愿的陪伴。
+
+强烈支持英国人不原谅贝，强烈支持维也纳爱乐的中提不跟他握手，还握个铲铲
+儿。是个爷们儿的就得持继翻脸直到这二货断气那天。走起。
+
+
+* 网络书签
+** JAIST LIFE
+[[https://web-mail2013.jaist.ac.jp/?client%3Dadvanced&loginOp%3Dlogout][JAIST邮箱]]
+
+[[http://translate.google.cn/#en/zh-CN/][google翻译]]
+
+[[http://w.qq.com/][web QQ]]
+
+** Emacs
+[[http://orgmode.org/manual/index.html#Top][org手册, 英文，权威]]
+
+[[http://doc.norang.ca/org-mode.html#HowToUseThisDocument][org mode, 用纯文本中组织你的生活, 英文]]
+
+[[http://forum.ubuntu.org.cn/viewtopic.php?f%3D68&t%3D395158][Emacs Org Mode 小节， 长文慎入]]
+
+[[http://www.cnblogs.com/Open_Source/archive/2011/07/17/2108747.html#sec-1-3][Org-mode 简明手册]]
+
+[[http://floss.zoomquiet.io/data/20120301101333/index.html][org-mode, agenda view的使用]]
+
+[[http://darksun.blog.51cto.com/3874064/970737][org-mode进行时间管理(2)]]
+
+[[http://www.cnblogs.com/holbrook/archive/2012/04/12/2444992.html][org-mode，最好的文档编辑利器]]
+
+[[http://darksun.blog.51cto.com/3874064/1302920][mobilOrg, 手机端的org神器]]
+
+[[https://ioctocat.com/][github的iOS客户端，尝试和电脑同步org文件]]
+
+[[http://emacser.com/weibo.htm][Emacs中文网，比较新奇的东西都能找到，比如聊天eri，甚至微博]]
+
+[[http://lifegoo.pluskid.org/wiki/EmacsAsFileManger.html][Emacs 文件管理器]]
+
+** 王垠的主页
+[[http://docs.huihoo.com/homepage/shredderyin/][王垠的主页，老的，清华，影响了我]]
+
+[[http://yinwang0.lofter.com/view][新的，不知啥时候就不能访问了]]
+
+
+** Linux中的仙剑DOS版
+
+[[http://hi.baidu.com/qileilu/item/98177e770e2b2d3e70442313][linux仙剑]]
+
+[[http://pan.baidu.com/share/link?shareid%3D268651&uk%3D939986085][linux仙剑安装版下载]]
+
+[[http://tieba.baidu.com/p/1082803228][主要攻略]]
+[[http://pal.17173.com/pal1/map/pal1map.shtml][dos仙剑部分详细地图]]
+
+[[http://www.xianjian5.com/uploads/allimg/090630/1195520N56-32.jpg][蛤蟆洞]]
+

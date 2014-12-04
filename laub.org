@@ -10,10 +10,10 @@
  
 **  lab seminar
 
-Date : 12/3(Wed) 15:10~
+Date : 17/3(Wed) 15:10~
 Location : Our Lab
 Speaker : Suzuki, Hatano
-   SCHEDULED: <2014-12-03 三 15:10> 
+   SCHEDULED: <2014-12-17 三 15:10> 
    :PROPERTIES:
    :ID:       bde62ddd-f5ba-451b-b187-2f7a94bcae43
    :END:
@@ -46,24 +46,26 @@ Speaker : Suzuki, Hatano
    :PROPERTIES:
    :ID:       1e4d2bc7-f318-446b-b4ff-27d4a3767749
    :END:
-*** TODO 向东条老爷演示 pitch distance 的比较[0%]
+*** TODO 向东条老爷演示 pitch distance 的比较[50%]
     DEADLINE: <2014-11-21 五>
     :PROPERTIES:
     :ID:       10cb2a94-c3b2-47ed-8fd0-8a37ae5c7b0d
     :END:
 **** TODO lenvensthtan distance学习， 把公式整出来[0%]
      DEADLINE: <2014-11-20 四 14:00>
-     - State "TODO"     from "WAIT"     [2014-11-19 三 05:26]
-     - State "TODO"     from "WAIT"     [2014-11-19 三 05:26]
+ 
      :PROPERTIES:
      :ID:       1f2929f1-3589-491b-ad28-2fbf432d2c4e
      :END:
-**** TODO 程序[0%]
-     DEADLINE: <2014-11-20 四 20:00>
+**** DONE 程序[50%]
+     CLOSED: [2014-12-03 三 15:24] DEADLINE: <2014-11-20 四 20:00>
+     - State "DONE"       from "TODO"       [2014-12-03 三 15:24]
      :PROPERTIES:
      :ID:       460effb7-5cf9-44e4-9678-35e71bd53e57
      :END:
-***** TODO 简单版[100%]
+***** DONE 简单版[100%]
+      CLOSED: [2014-12-03 三 15:23]
+      - State "DONE"       from "TODO"       [2014-12-03 三 15:23]
       :PROPERTIES:
       :ID:       f2b4043c-c4f3-41a0-b6aa-54482e07bfb5
       :END:
@@ -83,8 +85,9 @@ Speaker : Suzuki, Hatano
        CLOSED: [2014-11-20 四 16:40] DEADLINE: <2014-11-19 三 08:00>[0%]
        - State "DONE"     from "TODO"     [2014-11-20 四 16:40]
 
-****** 一个4分音符必须分为4个16th才能比较pitch-distance。那么duration应该是4分音符的，还是16分音符的？
-       DEADLINE: <2014-11-20 四 18:00>
+****** DONE 一个4分音符必须分为4个16th才能比较pitch-distance。那么duration应该是4分音符的，还是16分音符的？
+       CLOSED: [2014-12-03 三 15:23] DEADLINE: <2014-11-20 四 18:00>
+       - State "DONE"       from ""           [2014-12-03 三 15:23]
        :PROPERTIES:
        :ID:       b8aab014-ba48-407b-a9b6-6be03bd3472b
        :END:
@@ -107,6 +110,7 @@ Speaker : Suzuki, Hatano
 	:END:
 
 
+
 ***** TODO 完美版[0%]
       :PROPERTIES:
       :ID:       6b0c08a0-102e-467d-826c-ad9c28564cd7
@@ -115,6 +119,25 @@ Speaker : Suzuki, Hatano
        :PROPERTIES:
        :ID:       d65ce752-d393-42e0-a700-b89c6b808348
        :END:
+****** TODO 读入未分裂的note信息
+音高，含临时升降符号
+
+时值
+
+******* 用数组还是数组？
+每个音符的数据结构？
+  char n_name[32]; //音高，含临时升降符号，形如"Dflat"
+  unsigned short n_dur; //时值，整数，形如64,256之类
+
+
+
+每小节的音符个数是未知的
+
+
+总共多少小节也是未知的
+
+
+
 ****** TODO 每个串的比较范围的动态选取[%]
        :PROPERTIES:
        :ID:       0ba2f76f-c85e-4abe-a8ef-1e247abef318
@@ -127,6 +150,7 @@ Speaker : Suzuki, Hatano
        :PROPERTIES:
        :ID:       094726f4-c865-459c-8317-19d98d9990fd
        :END:
+
 
 *** TODO 论文[%]
     :PROPERTIES:

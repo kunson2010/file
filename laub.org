@@ -34,58 +34,56 @@ Speaker : Suzuki, Hatano
     :ID:       cc99ac67-a103-44ec-9b42-275f70b0a874
     :END:
 
- 
-* WAIT 2015年较好的状态[0%]
-  - State "TODO"     from "WAIT"     [2014-11-25 二 22:55]
-  - State "DONE"     from "CANCLE"     [2014-11-25 二 22:54]
-  :PROPERTIES:
-  :ID:       71c8af4c-988f-482c-a84a-3b2d13ed4aa2
-  :END:
 
-** TODO 2015年3月准时毕业[0%]
+* C编程
+二维数组作为函数的输出参数
+[[http://www.cnblogs.com/wuyuegb2312/archive/2013/06/14/3135277.html][二维数组作为参数]]
+
+
+* TODO 2015年3月准时毕业[0%]
    :PROPERTIES:
    :ID:       1e4d2bc7-f318-446b-b4ff-27d4a3767749
    :END:
-*** TODO 向东条老爷演示 pitch distance 的比较[50%]
+** TODO 向东条老爷演示 pitch distance 的比较[50%]
     DEADLINE: <2014-11-21 五>
     :PROPERTIES:
     :ID:       10cb2a94-c3b2-47ed-8fd0-8a37ae5c7b0d
     :END:
-**** TODO lenvensthtan distance学习， 把公式整出来[0%]
+*** TODO lenvensthtan distance学习， 把公式整出来[0%]
      DEADLINE: <2014-11-20 四 14:00>
  
      :PROPERTIES:
      :ID:       1f2929f1-3589-491b-ad28-2fbf432d2c4e
      :END:
-**** DONE 程序[50%]
+*** DONE 程序[50%]
      CLOSED: [2014-12-03 三 15:24] DEADLINE: <2014-11-20 四 20:00>
      - State "DONE"       from "TODO"       [2014-12-03 三 15:24]
      :PROPERTIES:
      :ID:       460effb7-5cf9-44e4-9678-35e71bd53e57
      :END:
-***** DONE 简单版[100%]
+**** DONE 简单版[100%]
       CLOSED: [2014-12-03 三 15:23]
       - State "DONE"       from "TODO"       [2014-12-03 三 15:23]
       :PROPERTIES:
       :ID:       f2b4043c-c4f3-41a0-b6aa-54482e07bfb5
       :END:
-****** DONE 前8个16th为什么被清空，检查，并改正[100%]
+***** DONE 前8个16th为什么被清空，检查，并改正[100%]
        CLOSED: [2014-11-19 三 05:18] DEADLINE: <2014-11-18 二 04:00>
        - State "DONE"     from "WAIT"     [2014-11-19 三 05:18]
        - State "WAIT"     from "TODO"     [2014-11-19 三 05:18]
-****** DONE 后4个16th为什么没有，检查，并改正[100%]
+***** DONE 后4个16th为什么没有，检查，并改正[100%]
        CLOSED: [2014-11-19 三 05:19]
        - State "DONE"     from "WAIT"     [2014-11-19 三 05:19]
        - State "WAIT"     from "DONE"     [2014-11-19 三 05:19]
        - State "DONE"     from "TODO"     [2014-11-19 三 05:19]
-****** DONE 简单的edting distance加入计算[100%]
+***** DONE 简单的edting distance加入计算[100%]
        CLOSED: [2014-11-20 四 16:40] DEADLINE: <2014-11-19 三 16:35>
        - State "DONE"     from "TODO"     [2014-11-20 四 16:40]
-****** DONE 程序内部临时升降记号的处理[100%]
+***** DONE 程序内部临时升降记号的处理[100%]
        CLOSED: [2014-11-20 四 16:40] DEADLINE: <2014-11-19 三 08:00>[0%]
        - State "DONE"     from "TODO"     [2014-11-20 四 16:40]
 
-****** DONE 一个4分音符必须分为4个16th才能比较pitch-distance。那么duration应该是4分音符的，还是16分音符的？
+***** DONE 一个4分音符必须分为4个16th才能比较pitch-distance。那么duration应该是4分音符的，还是16分音符的？
        CLOSED: [2014-12-03 三 15:23] DEADLINE: <2014-11-20 四 18:00>
        - State "DONE"       from ""           [2014-12-03 三 15:23]
        :PROPERTIES:
@@ -111,54 +109,58 @@ Speaker : Suzuki, Hatano
 
 
 
-***** TODO 完美版[0%]
+**** TODO 完美版[0%]
       :PROPERTIES:
       :ID:       6b0c08a0-102e-467d-826c-ad9c28564cd7
       :END:
-****** TODO Mimi xml库的使用[%]
+***** TODO Mimi xml库的使用[%]
        :PROPERTIES:
        :ID:       d65ce752-d393-42e0-a700-b89c6b808348
        :END:
-****** TODO 读入未分裂的note信息
+***** TODO 读入未分裂的note信息
 音高，含临时升降符号
 
 时值
 
-******* 用数组还是数组？
+****** 用数组还是链表？
 每个音符的数据结构？
+
   char n_name[32]; //音高，含临时升降符号，形如"Dflat"
+
   unsigned short n_dur; //时值，整数，形如64,256之类
 
 
 
-每小节的音符个数是未知的
-
-
+每小节的音符个数是未知的？
 总共多少小节也是未知的
 
+用链表：！！！
 
 
-****** TODO 每个串的比较范围的动态选取[%]
+
+
+***** TODO 每个串的比较范围的动态选取[%]
        :PROPERTIES:
        :ID:       0ba2f76f-c85e-4abe-a8ef-1e247abef318
        :END:
-****** TODO 音符的分裂方式，动态[%]
+***** TODO 音符的分裂方式，动态[%]
        :PROPERTIES:
        :ID:       e7458b41-893e-4cb1-9c20-c5d9e90e7645
        :END:
-****** TODO editing distance 加入计算[%]
+***** TODO editing distance 加入计算[%]
        :PROPERTIES:
        :ID:       094726f4-c865-459c-8317-19d98d9990fd
        :END:
 
 
-*** TODO 论文[%]
+** TODO 论文[%]
     :PROPERTIES:
     :ID:       c9fcbf59-cbd6-4c57-8da4-48b7cf8068fc
     :END:
     
-
-** TODO 2015年3月前找到工作[50%]
+* musicXML
+[[http://www.cnblogs.com/del/archive/2011/10/21/2220788.html][musicXML的简单解析]]
+* TODO 2015年3月前找到工作[50%]
    :PROPERTIES:
    :ID:       6ac852f9-9b37-4638-8eaf-04ecbfeb383d
    :END:

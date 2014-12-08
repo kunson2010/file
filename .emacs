@@ -1,3 +1,7 @@
+;; Ctrl-减号  为undo
+;; (global-set-key "\C--" 'undo)
+
+
 ;; 企图在org-agenda中显示中文日期
 (add-to-list 'load-path "~/.emacs.d/")
 (require 'cal-china-x)
@@ -375,12 +379,29 @@
 ;; F6 计算器
 (global-set-key [f6] 'calculator)
 
+;;C-f7 
+;;f7 
+(defun du-onekey-compile ()
+  "保存并编译"
+  (interactive)
+  (save-some-buffers t)
+  (switch-to-buffer-other-window "*compilation*")
+  (compile compile-command))
+(global-set-key [C-f7] 'compile)
+(global-set-key [f7] 'du-onekey-compile)
+
+
 ;; F7 编译
-(global-set-key [f7] 'compile)
-'(compile-command "make")
+;; (global-set-key [f7] 'compile)
+;; '(compile-command "make")
 
 
 ;; F8 调试
+;; (defun du-gdb-many-windows ()
+;;   "调入gdb并且进入多窗口"
+;;   (interactive)
+;;   (gdb)
+;;   (gdb-many-windows))
 (global-set-key [f8] 'gdb)
 
 ;; F9 用空格填写tab制表符，希望先加上全buffer的自动选取。
